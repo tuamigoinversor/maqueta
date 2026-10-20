@@ -1,5 +1,33 @@
-TU AMIGO INVERSOR · WEB V32
+TU AMIGO INVERSOR · WEB V35
 ===========================
+
+CAMBIOS V35 (a partir de la auditoría externa)
+  - Comparador: nuevas filas «Peor caída con dinero real» (con el año de inicio) y «Principal inconveniente»; la caída anterior se
+    llama ahora «Peor caída (histórico completo)».
+  - Fichas: «Para quién es» incluye su principal inconveniente; «Con dinero real o simulado» incluye la peor caída con dinero real.
+  - FAQ: nueva pregunta «Ya tengo fondos indexados, ¿para qué me sirve esto?» (web y datos estructurados).
+  - Cómo funciona: «Puedes empezar solo leyendo los informes, sin operar».
+  - Metodología: los dividendos están incluidos (precios de cierre ajustados).
+  - Inconvenientes editables en assets/js/tai.js (campo con:).
+
+CAMBIOS V34: MÓVIL
+  - Test de perfil en móvil: pantalla completa, cabecera compacta y botones Atrás/Siguiente siempre visibles abajo.
+    Comprobado en 375x667 (iPhone SE) y 390x844: las 10 preguntas caben sin hacer scroll.
+  - Fichas en móvil un 20–25 % más cortas: menos aire entre secciones, interlineado 1,6 en móvil y las secciones de consulta
+    (historial, señales, resultados y entornos) plegadas con un botón «Ver todo».
+  - Tarjetas de estrategia con imagen más baja en móvil; textos de entrada algo más pequeños.
+  - Suscripción: en móvil el formulario va justo después del titular; precio y condiciones, debajo.
+  - El botón fijo inferior ya no tapa el final de la página ni choca con «volver arriba».
+  - Enlaces «Ver más» con zona táctil de 44 px; etiquetas diminutas (menos de 11 px) agrandadas; deslizadores más fáciles de tocar.
+  - Formulario de Brevo: su contenido no se puede maquetar desde la web (es un iframe). Ver recomendaciones abajo.
+
+CAMBIOS V33: INTERLINEADO Y ESPACIOS HOMOGÉNEOS
+  - Medido con el navegador en las 30 páginas (escritorio y móvil) y unificado con una única escala (bloque «V33» al final de site.css):
+    · Interlineado: texto corrido 1,7 (antes 1,6, 1,65, 1,7 o 1,75 según la página); textos de entrada 1,6; textos pequeños 1,6; notas 1,5.
+    · Entre párrafos: siempre 1rem (antes 0, 10, 11, 16 o 18 px según la página).
+    · Título → contenido: 0,8rem (en los artículos del blog era 0).
+    · Tras la cabecera de las páginas interiores: el mismo espacio en todas (antes 38, 77 o 138 px según la página).
+  - Aviso legal: quitada una frase repetida tras retirar la certificación.
 
 CAMBIOS V32
   - Se retira toda mención a la certificación MiFID II (UC3M): cabecera de la home, «Quién soy», «Sobre mí» (ahora: cartera pública
