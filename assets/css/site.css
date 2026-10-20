@@ -998,3 +998,76 @@ main .legal-sec h2{margin-bottom:.8rem}
   body{padding-bottom:84px}
   .to-top{bottom:92px!important}
 }
+
+/* ===================== V36 · MÓVIL COMPACTO =====================
+   Interlineado: texto 1,45 · títulos 1,1 · textos pequeños y notas 1,35
+   Espacios: secciones 2rem · bloques 1rem · párrafos .6rem */
+@media (max-width:600px){
+  :root{--sp-8:2rem}
+  main :is(p,li,dd,blockquote){line-height:1.45!important}
+  main :is(.small-note,.cards-note,.cmb-meta,.persona-note,.rep-meta,.post-meta,.cred-note,.rep-lag,.comp,.risk-ex-note,.disclaimer-bar p,.callout p,.price-list li,.chg-list li,.fineprint,.chart-note,.hp-sub,.rp-note,.s-sim,.kicker,.badge,.m-since,.asof,figcaption),
+  main :is(.m-card,.post-body,.persona,.rep-body,.s-body,.metric,.qa) :is(p,li){line-height:1.35!important}
+  main :is(h1,h2,h3){line-height:1.1}
+  /* párrafos y listas */
+  main :is(.prose,.guide,.post-content,.bio,.story) :is(p,ul,ol,blockquote,figure,.table-wrap,.callout) + :is(p,ul,ol,blockquote,figure,.table-wrap){margin-top:.6rem!important}
+  main .story p + p,main .cmb-ex p + p,main .persona p + p,main .m-card p + p{margin-top:.5rem!important}
+  main :is(.guide,.post-content,.prose) li + li{margin-top:.2rem}
+  main :is(.guide,.post-content,.prose) > ul,main :is(.guide,.post-content,.prose) > ol{gap:.25rem}
+  main :is(.prose,.guide,.post-content) > h2{margin-top:1.4rem!important}
+  main :is(.prose,.guide,.post-content) > h3{margin-top:1.1rem!important}
+  main :is(.prose,.guide,.post-content) > :is(h2,h3) + *{margin-top:.5rem!important}
+  /* cabeceras de sección y títulos */
+  .sec-head{margin-bottom:1rem}
+  main .sec-head p + p{margin-top:.4rem}
+  h2{margin:.25rem 0 .4rem}
+  .eyebrow{margin-bottom:.15rem}
+  .page-hero{padding-bottom:1rem}
+  .page-hero + :is(.section,.page-body){padding-top:1rem!important}
+  .page-hero h1{margin-bottom:.5rem}
+  .hero{padding:calc(64px + .75rem) 0 1.5rem}
+  .hero .cta-row,.strat-hero .cta-row{margin-top:1rem}
+  .hero-trust{margin-top:.8rem;gap:.4rem}
+  .section.tight{padding-block:1.25rem}
+  /* tarjetas y rejillas */
+  .m-card{padding:.9rem}
+  .m-card h3{margin-bottom:.3rem}
+  .cards,.tools,.method,.summary-grid,.rep-list,.rep-notes,.blog,.faq{gap:.75rem!important}
+  .s-body{padding:.85rem .9rem .95rem}
+  .s-body p{margin-bottom:.6rem}
+  .metrics{gap:.4rem}
+  .metric{padding:.45rem .6rem}
+  .s-actions{margin-top:.6rem}
+  .steps{gap:.6rem}
+  .step{padding:.8rem}
+  .qa h3 button{padding-block:.8rem}
+  .est-tools{margin-top:1rem}
+  .cards-note{margin-top:.8rem}
+  .ficha-cover-wrap{padding-bottom:.75rem}
+  .cta{padding:1.1rem .95rem}
+  .cta-grid{gap:1rem}
+  .price-list{gap:.4rem}
+  .price-list li{padding:.5rem .7rem}
+  .rep-card{padding:.9rem;gap:.8rem}
+  .post-cover{margin-bottom:1rem}
+  .disclaimer-bar{margin-top:1rem}
+  .cta-band{margin-top:1.25rem!important;padding:1rem}
+  .next-step{margin-top:1.25rem;padding:.9rem 1rem}
+  .m-collapse{max-height:480px}
+}
+@media (max-width:600px){
+  .how .phone-wrap{display:none}              /* el móvil de ejemplo repite lo que ya enseña el panel del principio */
+  .how-links{gap:.2rem 1rem;margin-top:.8rem}
+  .how-links .more{min-height:40px}
+  .strat-hero .pull{display:none}             /* cita decorativa: en móvil se oculta */
+  .hero-panel{padding:.9rem}
+  .chg-list{gap:.4rem;margin:.7rem 0 .6rem}
+  .chg-list li{padding:.5rem .65rem}
+  .rp-links .more{min-height:40px}
+  .doors{gap:.5rem;margin-top:1rem}
+  .door{padding:.7rem .85rem}
+  .tech-step{padding:.85rem!important}
+  .fit-col,.not-do,.risk-ex{padding:.9rem!important}
+  .fit{gap:.75rem!important}
+  .hero h1{font-size:2.05rem;margin-bottom:.6rem}
+  .lead{margin-bottom:.9rem}
+}
