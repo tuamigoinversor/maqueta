@@ -888,3 +888,113 @@ th .pp,td .pp{display:inline-block;margin-left:.2rem}
 @media (min-width:900px){.nav-links{align-items:center}.nav-links>li{display:flex;align-items:center}}
 .nav-links>li>a,.nav-links .sub-toggle{display:inline-flex;align-items:center;line-height:1.3;padding:.5rem .2rem;margin:0}
 .metric .m-since{display:block;font-size:var(--fs-xs);color:var(--muted);margin-top:.1rem}
+
+/* ===================== V33 · RITMO VERTICAL HOMOGÉNEO =====================
+   Interlineado: texto corrido (≈17px) 1,7 · textos de entrada (20px) 1,6 · textos pequeños (≈15px) 1,6 · notas (≈12px) 1,5
+   Espacios: entre párrafos 1rem · título → contenido .8rem · tras la cabecera de página 2,4rem */
+/* Texto corrido */
+main :is(.prose,.guide,.post-content,.bio,.story,.tech,.panel,.wp,.r,.cmb-ex) :is(p,li,dd),
+main :is(.lede-note,.how-links,.risk-ex p,.qa .ans p,.about p:not(.cred-note)),
+main :is(.fit-col,.not-do,.facts,.themes,.comp-grid,.steps,.tech) li,
+main .tech-step p{line-height:1.7}
+/* Textos de entrada */
+main :is(.lead,.sec-head p,.cta p,.cta-band p){line-height:1.6}
+/* Textos pequeños */
+main :is(.small-note,.cards-note,.cmb-meta,.persona-note,.rep-meta,.post-meta,.cred-note,.rep-lag,.disclaimer-bar p,.callout p,.price-list li,.chg-list li),
+main :is(.m-card,.post-body,.persona,.rep-body) :is(p,li){line-height:1.6}
+main .guide :is(.small-note,.persona p,.persona-note,.cmb-meta){line-height:1.6}
+/* Notas y pies */
+main :is(.fineprint,.chart-note,.hp-sub,.rp-note,.s-sim,.risk-ex-note,.kicker,.badge,.m-since,figcaption){line-height:1.5}
+main .sec-head p.asof{line-height:1.5}
+/* Espacio entre bloques de texto corrido */
+main :is(.prose,.guide,.post-content,.bio) > * + *{margin-top:1rem}
+main :is(.prose,.guide,.post-content,.bio,.story) p{margin-bottom:0}
+main .story p + p,main .cmb-ex p + p,main .persona p + p{margin-top:1rem}
+main :is(.prose,.guide,.post-content) > :is(h2,h3){margin-bottom:0}
+main :is(.prose,.guide,.post-content) > h2{margin-top:2.4rem}
+main :is(.prose,.guide,.post-content) > h3{margin-top:1.8rem}
+main :is(.prose,.guide,.post-content) > :is(h2,h3):first-child{margin-top:0}
+main :is(.prose,.guide,.post-content) > :is(h2,h3) + *{margin-top:.8rem}
+/* Cabeceras de sección y tarjetas */
+main .sec-head p + p{margin-top:.75rem}
+main .m-card p + p{margin-top:.6rem}
+main .cta-band h2{margin-bottom:.6rem}
+/* Separación uniforme tras la cabecera de las páginas interiores */
+.page-hero + :is(.section,.page-body){padding-top:clamp(1.5rem,3vw,2.4rem)}
+/* V33 · capa final: estas reglas mandan sobre las de cada componente */
+main :is(.prose,.guide,.post-content,.bio,.story,.wp,.r) :is(p,li){line-height:1.7!important}
+main :is(.prose,.guide,.post-content,.bio,.story,.wp) p{margin-bottom:0!important}
+main :is(.small-note,.cards-note,.cmb-meta,.persona-note,.rep-meta,.post-meta,.cred-note,.rep-lag,.comp,.risk-ex-note,.disclaimer-bar p,.callout p,.price-list li,.chg-list li){line-height:1.6!important}
+main :is(.fineprint,.chart-note,.hp-sub,.rp-note,.s-sim,.kicker,.badge,.m-since,.asof,figcaption){line-height:1.5!important}
+main p.prose{line-height:1.7!important}
+main :is(.prose,.guide,.post-content,.bio,.story) :is(p,ul,ol,blockquote,figure,.table-wrap,.callout) + :is(p,ul,ol,blockquote,figure,.table-wrap){margin-top:1rem!important}
+main :is(.prose,.guide,.post-content,.bio,.story) blockquote > :first-child{margin-top:0!important}
+main .legal-sec h2{margin-bottom:.8rem}
+
+/* ===================== V34 · MÓVIL ===================== */
+/* Test de perfil: pantalla completa, cabecera compacta y botones siempre visibles */
+@media (max-width:600px){
+  #quizModal{padding:0;align-items:stretch}
+  #quizModal .modal-box{max-width:none;max-height:none;height:100%;height:100dvh;border-radius:0;border:0;display:flex;flex-direction:column}
+  #quizModal .modal-content{padding:.9rem 1rem 0;display:flex;flex-direction:column;flex:1 0 auto}
+  #quizModal .modal-content>.eyebrow{font-size:.68rem}
+  #quizModal .modal-content>p{display:none}
+  #quizTitle{font-size:1.05rem!important;margin:.15rem 2.6rem .8rem 0!important;line-height:1.25}
+  #quizModal .modal-close{top:.55rem;right:.55rem;width:40px;height:40px}
+  .q-meta{font-size:.76rem;margin-bottom:.35rem}
+  .q-progress{height:6px;margin-bottom:.9rem}
+  .q-title{font-size:1.12rem;line-height:1.3;margin-bottom:.8rem}
+  .q-opts{gap:.45rem}
+  .q-opt{padding:.6rem .8rem;min-height:46px;font-size:.92rem;line-height:1.35;gap:.6rem;border-radius:12px}
+  .q-nav{position:sticky;bottom:0;margin-top:auto;padding:.7rem 0 calc(.7rem + env(safe-area-inset-bottom));background:var(--bg-2);border-top:1px solid var(--line)}
+  .q-nav .btn{min-height:44px}
+  .quiz{display:flex;flex-direction:column;flex:1}
+  .q-result.long p{line-height:1.55}
+}
+/* Resto de la web en móvil: menos aire vertical, textos algo más compactos y zonas táctiles cómodas */
+@media (max-width:600px){
+  :root{--sp-8:2.75rem}
+  .section.tight{padding-block:1.75rem}
+  .sec-head{margin-bottom:1.4rem}
+  .sec-head p{font-size:1.02rem}
+  h2{margin:.35rem 0 .55rem}
+  .hero{padding:calc(64px + 1.25rem) 0 2.25rem}
+  .page-hero{padding-top:calc(64px + 1.25rem)}
+  main :is(.prose,.guide,.post-content,.bio,.story,.wp,.r) :is(p,li),main p.prose{line-height:1.6!important}
+  main :is(.lede-note,.how-links,.risk-ex p,.qa .ans p,.about p:not(.cred-note)),main :is(.fit-col,.not-do,.facts,.themes,.comp-grid,.steps,.tech) li,main .tech-step p{line-height:1.6}
+  main :is(.prose,.guide,.post-content,.bio,.story) :is(p,ul,ol,blockquote,figure,.table-wrap,.callout) + :is(p,ul,ol,blockquote,figure,.table-wrap){margin-top:.85rem!important}
+  main :is(.prose,.guide,.post-content) > h2{margin-top:1.9rem}
+  .m-card{padding:1.1rem}
+  .s-media{aspect-ratio:16/9}
+  .s-body{padding:1rem 1rem 1.1rem}
+  .strat-hero h1{font-size:2.7rem;margin:.1rem 0 .5rem}
+  .ficha-cover{aspect-ratio:21/9!important}
+  .cta{padding:1.4rem 1.1rem;border-radius:22px}
+  .form-embed{padding:.25rem}
+  .more{min-height:44px;display:inline-flex;align-items:center}
+  .tag-buy,.tag-sell,.tag-hold,.pp{font-size:.7rem}
+  .mail-foot{font-size:.68rem}
+  input[type=range]{height:44px}
+  .step{padding:1rem}
+}
+@media (max-width:600px){
+  .m-collapse{max-height:560px;overflow:hidden;position:relative}
+  .m-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+  .section.alt .m-collapse::after{background:linear-gradient(180deg,transparent,var(--bg-2))}
+  .m-collapse.open{max-height:none;overflow:visible}
+  .m-collapse.open::after{display:none}
+  .m-more{display:flex;margin:1rem auto 0;min-height:44px}
+  .hero .lead,.strat-hero .lead{font-size:1.08rem}
+  .strat-hero .pull{font-size:.95rem;margin-top:1.2rem}
+}
+
+/* V34 · bloque de suscripción: en móvil el formulario va justo después del titular */
+.cta-grid-sub{grid-template-areas:"intro" "form" "price"}
+.cta-grid-sub .cta-intro{grid-area:intro}.cta-grid-sub .form-embed{grid-area:form}.cta-grid-sub .cta-price{grid-area:price}
+.cta-grid-sub .price-list{margin-top:0}
+@media (min-width:980px){.cta-grid-sub{grid-template-areas:"intro form" "price form";align-items:start}}
+/* V34 · botón fijo inferior: no tapa el final de la página ni choca con «volver arriba» */
+@media (max-width:899px){
+  body{padding-bottom:84px}
+  .to-top{bottom:92px!important}
+}

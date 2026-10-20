@@ -17,31 +17,37 @@ const IMG = id => ({ src: `${BASE}assets/img/estrategias/${id}-card.webp` });
 T.STRATEGIES = [
   {id:'ROCA',     slug:'roca',     type:'permanente', profile:'Perfil conservador',  color:'#0ea5e9', risk:1, review:'Semestral',
    desc:'La más tranquila: seis fondos o ETF repartidos entre renta fija, oro y bolsa. Crece despacio y cae poco, aunque también puede caer.',
+   con:'En años de bolsa muy alcista se queda bastante por detrás: está pensada para caer poco, no para subir mucho.',
    feats:['Baja volatilidad','Diversificación','Revisión semestral'], avg:7.5, dd:-9.2, group:'tranquila', realFrom:2017, realAvg:7.1, realDd:-9.2, realMonths:117, fullFrom:2016, y25:5.6, y26:4.7,
    img:IMG('roca'), alt:'Cima rocosa con montañas nevadas al amanecer, símbolo de solidez y calma',
    url:BASE+'cartera-permanente-conservadora-roca/index.html'},
   {id:'IMPULSO',  slug:'impulso',  type:'permanente', profile:'Perfil moderado',     color:'#10b981', risk:2, review:'Semestral',
    desc:'Un paso más que ROCA: oro y bolsa, sin renta fija. Más crecimiento a cambio de más altibajos.',
+   con:'Depende mucho del oro (40% de la cartera): cuando el oro cae, la estrategia lo nota.',
    feats:['Riesgo medio','Sin renta fija','Revisión semestral'], avg:13.7, dd:-16.5, group:'equilibrada', realFrom:2018, realAvg:14.5, realDd:-16.5, realMonths:105, fullFrom:2016, y25:22.6, y26:8.2,
    img:IMG('impulso'), alt:'Carretera junto al mar al atardecer con estelas de luz, símbolo de avance constante',
    url:BASE+'cartera-inversion-crecimiento-impulso/index.html'},
   {id:'HORIZONTE',slug:'horizonte',type:'tactica',    profile:'Perfil moderado',     color:'#7c3aed', risk:2, review:'Mensual', note:'Plan de pensiones',
    desc:'Para tu plan de pensiones: cada mes una regla sencilla decide si estar en bolsa de EE. UU. o en renta fija.',
+   con:'Solo funciona con planes de pensiones, cuyo dinero no está disponible salvo en supuestos concretos; y en mercados sin tendencia la señal puede cambiar sin ganancia.',
    feats:['Muy largo plazo','Baja rotación','Simplicidad operativa'], avg:12.2, dd:-19.3, group:'equilibrada', realFrom:2020, realAvg:13.4, realDd:-19.3, realMonths:81, fullFrom:2018, y25:17.4, y26:17.6,
    img:IMG('horizonte'), alt:'Piscina infinita frente al mar al amanecer, símbolo de largo plazo',
    url:BASE+'plan-pensiones-moderado-horizonte/index.html'},
   {id:'GEDA',     slug:'geda',     type:'tactica',    profile:'Perfil agresivo',     color:'#f59e00', risk:4, review:'Mensual',
    desc:'Cada mes rota hacia los 7 activos con más fuerza (índices, sectores y acciones). Es mi estrategia principal.',
+   con:'No pasa a liquidez: en una caída general del mercado sigue invertida. Además lleva acciones sueltas.',
    feats:['Alta rotación','Señales cuantitativas','Enfoque dinámico'], avg:40.6, dd:-19.6, group:'atrevida', realFrom:2021, realAvg:39.7, realDd:-13.6, realMonths:69, fullFrom:2016, y25:56.6, y26:100.2,
    img:IMG('geda'), alt:'Pantallas con gráficos de cotización sobre un escritorio, símbolo del análisis de tendencias',
    url:BASE+'inversion-tactica-geda/index.html'},
   {id:'GEN-Z',    slug:'genz',     type:'tactica',    profile:'Perfil muy agresivo', color:'#ec4899', risk:5, review:'Mensual',
    desc:'Cuatro acciones de temáticas de futuro, elegidas cada mes por su fuerza. Subidas y bajadas muy bruscas.',
+   con:'Solo cuatro acciones de pocas temáticas: subidas y bajadas muy bruscas y muy concentradas.',
    feats:['Alta volatilidad','Temáticas innovadoras','Largo plazo'], avg:68.8, dd:-44.9, group:'atrevida', realFrom:2024, realAvg:106.7, realDd:-44.9, realMonths:33, fullFrom:2020, y25:159.2, y26:16.2,
    img:IMG('genz'), alt:'Placa de circuitos electrónicos vista de cerca, símbolo de tecnología disruptiva',
    url:BASE+'inversion-tematica-gen-z/index.html'},
   {id:'CRYPTO',   slug:'crypto',   type:'tactica',    profile:'Perfil especulativo', color:'#ef4444', risk:5, review:'Mensual',
    desc:'Bitcoin, Ethereum y las tres criptomonedas con más fuerza. Sube y baja muchísimo: solo con dinero que puedas permitirte perder.',
+   con:'Volatilidad extrema: en su historial ha llegado a caer más de un 70%.',
    feats:['Volatilidad extrema','Ciclos de mercado','Alto riesgo'], avg:44.8, dd:-73, group:'atrevida', realFrom:2023, realAvg:57.0, realDd:-50.1, realMonths:45, fullFrom:2018, y25:-23.6, y26:20.8,
    img:IMG('crypto'), alt:'Moneda dorada de Bitcoin frente a gráficos de mercado, símbolo del mundo cripto',
    url:BASE+'inversion-criptomonedas-crypto/index.html'}
@@ -346,4 +352,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (location.hash === '#test') setTimeout(() => T.openQuiz(), 250);   // enlace directo al test desde otras páginas
 });
 if (document.readyState !== 'loading') { T.observeReveal(); }
+
+/* ---------- MÓVIL: secciones de consulta plegadas (historial, señales, resultados, entornos) ---------- */
+T.mobileCollapse = function () {
+  if (!matchMedia('(max-width:600px)').matches) return;
+  ['historial', 'senales', 'resultados', 'entorno'].forEach(id => {
+    const s = document.getElementById(id); if (!s || s.dataset.mc) return;
+    const c = s.querySelector('.container'); if (!c) return;
+    const head = c.querySelector(':scope > .sec-head');
+    const rest = [...c.children].filter(x => x !== head); if (!rest.length) return;
+    const w = document.createElement('div'); w.className = 'm-collapse'; w.id = id + '-mc';
+    rest.forEach(x => w.appendChild(x)); c.appendChild(w);
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn-ghost btn-sm m-more';
+    b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-controls', w.id); b.textContent = 'Ver todo';
+    b.addEventListener('click', () => { const o = w.classList.toggle('open'); b.setAttribute('aria-expanded', o); b.textContent = o ? 'Ver menos' : 'Ver todo'; if (!o) s.scrollIntoView({block: 'start'}); window.dispatchEvent(new Event('resize')); });
+    c.appendChild(b); s.dataset.mc = '1';
+  });
+};
+if (document.readyState === 'complete') T.mobileCollapse(); else window.addEventListener('load', T.mobileCollapse);
 })();

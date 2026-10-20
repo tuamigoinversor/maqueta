@@ -43,11 +43,13 @@ const SECTIONS = [
     ['Últimos 12 meses', s => f2(R[s.id].a1), 'max', s => R[s.id].a1]
   ]],
   ['Riesgo', [
-    ['Máx. caída', s => f1(s.dd), 'max', s => s.dd],
+    ['Peor caída (histórico completo)', s => f1(s.dd), 'max', s => s.dd],
+    ['Peor caída con dinero real', s => f1(s.realDd) + '<br><small>desde ' + s.realFrom + '</small>', 'max', s => s.realDd],
     ['Ratio rent. / caída', s => (s.avg / Math.abs(s.dd)).toFixed(2).replace('.', ',') + 'x', 'max', s => s.avg / Math.abs(s.dd)]
   ]],
   ['Descripción', [
     ['Qué es', s => s.desc, null, null, 'txt'],
+    ['Principal inconveniente', s => s.con, null, null, 'txt'],
     ['Características', s => s.feats.join(' · '), null, null, 'txt']
   ]]
 ];
