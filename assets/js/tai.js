@@ -1,7 +1,7 @@
 /* =========================================================
    TAI · código común de todas las páginas
    Datos de las estrategias, utilidades, tema claro/oscuro, navegación,
-   test de perfil (ventana emergente), cookies, FAQ y formulario.
+   test de perfil (ventana emergente), FAQ y formulario.
    Se carga con defer, después de Chart.js.
    ========================================================= */
 (function () {
@@ -336,15 +336,44 @@ T.renderFaq = function (el, list) {
 
 /* ---------- 11. FORMULARIO DE SUSCRIPCIÓN: ahora es el formulario embebido de Brevo (iframe en index.html) ---------- */
 
-/* ---------- 12. COOKIES (RGPD) ---------- */
-const ck = $('#cookie');
-let consent = null; try { consent = localStorage.getItem('tai-cookies'); } catch (e) {}
-if (!consent) setTimeout(() => ck.classList.add('show'), 800);
-function setConsent(v) { try { localStorage.setItem('tai-cookies', v); } catch (e) {} ck.classList.remove('show');
-  if (v === 'accepted') { /* Si se añade analítica, cargarla aquí y solo tras el consentimiento */ } }
-$('#ckAccept').addEventListener('click', () => setConsent('accepted'));
-$('#ckReject').addEventListener('click', () => setConsent('rejected'));
-$('#cookieSettings').addEventListener('click', e => { e.preventDefault(); ck.classList.add('show'); $('#ckAccept').focus(); });
+/* ---------- 12. COOKIES ----------
+   V39: la web no usa cookies de analítica ni de publicidad, así que no hay aviso de cookies.
+   Solo guarda en el navegador el tema claro/oscuro que elige el visitante (localStorage).
+   Si algún día se añade analítica con cookies, habrá que volver a poner un aviso con consentimiento. */
+try { localStorage.removeItem('tai-cookies'); } catch (e) {}
+
+/* ---------- 12b. MEDICIÓN DE CLICS (GoatCounter, sin cookies) ----------
+   Cuenta como «eventos» los clics en los botones que importan. Se ven en el panel de GoatCounter.
+   suscribirse/página/lugar = botones «Quiero el informe»; ver-informes/página/lugar = enlaces a la página de informes;
+   pdf/AAAA-MM-abrir|descargar = informes en PDF; puerta/… = «Soy nuevo» / «Ya invierto»; siguiente/… = 2.º botón de los artículos. */
+function gcPage() {
+  const parts = location.pathname.split('/').filter(Boolean);
+  if (parts.length && /\.html$/.test(parts[parts.length - 1])) parts.pop();
+  const d = document.documentElement.getAttribute('data-base') || '';
+  const depth = (d.match(/\.\.\//g) || []).length;          // en local (file://) quita las carpetas de más
+  return depth ? (parts.slice(-depth).join('-') || 'inicio') : 'inicio';
+}
+function gcPlace(a) {
+  if (a.closest('footer')) return 'pie';
+  if (a.closest('.site-nav, header')) return 'menu';
+  if (a.closest('#stickyCta')) return 'boton-fijo';
+  if (a.closest('.cta-band')) return 'articulo';
+  const s = a.closest('section[id]'); if (s) return s.id;
+  if (a.closest('.hero, .page-hero, .strat-hero')) return 'cabecera';
+  return 'texto';
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('a'); if (!a) return;
+  const href = a.getAttribute('href') || ''; let ev = null;
+  const pg = gcPage();
+  if (href.includes('#suscripcion')) ev = 'suscribirse/' + pg + '/' + gcPlace(a);
+  else if (/\.pdf$/i.test(href)) { const m = href.match(/(\d{4}-\d{2})\.pdf$/i); ev = 'pdf/' + (m ? m[1] : 'informe') + (a.hasAttribute('download') ? '-descargar' : '-abrir'); }
+  else if (a.classList.contains('door')) ev = 'puerta/' + (href.includes('empieza-aqui') ? 'soy-nuevo' : 'ya-invierto');
+  else if (/informes\/(index\.html)?$/.test(href)) ev = 'ver-informes/' + pg + '/' + gcPlace(a);
+  else if (a.closest('.cta-band') && a.classList.contains('btn-ghost')) ev = 'siguiente/' + pg;
+  if (!ev) return;
+  try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: ev, title: a.textContent.trim().slice(0, 60), event: true }); } catch (err) {}
+});
 
 /* ---------- 13. INICIO ---------- */
 document.addEventListener('DOMContentLoaded', () => {

@@ -4,6 +4,8 @@ fecha: 2026-06-19
 categoria: "Operativa"
 resumen: "Qué es un drawdown, por qué es inevitable y cómo prepararte para no abandonar tu estrategia en mitad de una caída."
 imagen: "assets/img/posts/drawdowns-en-inversion-sin-saltarte-el-sistema.webp"
+siguiente_texto: "Ver las caídas de cada estrategia"
+siguiente_url: "/comparador/"
 ---
 
 Llevas varios meses siguiendo una estrategia. Todo va bien. La rentabilidad acumulada marca máximos y empiezas a sentir que has tomado una gran decisión.

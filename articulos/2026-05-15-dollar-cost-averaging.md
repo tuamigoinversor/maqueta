@@ -4,6 +4,8 @@ fecha: 2026-05-15
 categoria: "Operativa"
 resumen: "Entrar poco a poco en una estrategia (dollar cost averaging): cuándo ayuda, cuánto cuesta y en cuántas partes dividir la entrada."
 imagen: "assets/img/posts/dollar-cost-averaging.webp"
+siguiente_texto: "Ver el ejemplo práctico"
+siguiente_url: "/ejemplo-practico/"
 ---
 
 Hay una situación que se repite mucho.

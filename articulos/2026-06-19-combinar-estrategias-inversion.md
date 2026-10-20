@@ -4,6 +4,8 @@ fecha: 2026-06-19
 categoria: "Estrategias"
 resumen: "No tienes que elegir solo una estrategia: cómo pensar una combinación con núcleo y satélites sin perder de vista la caída máxima conjunta."
 imagen: "assets/img/posts/combinar-estrategias-inversion.webp"
+siguiente_texto: "Probar a combinar estrategias"
+siguiente_url: "/combinar-estrategias/"
 ---
 
 Una de las preguntas que más me llega es: «¿Me meto en ROCA o en GEDA?» Está planteada como un dilema, como si tuvieras que elegir un bando. Y no es así. Las seis estrategias no compiten entre sí — están pensadas como piezas que se pueden combinar, cada una con un papel distinto dentro de tu cartera.

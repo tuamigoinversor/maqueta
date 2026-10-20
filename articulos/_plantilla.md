@@ -4,6 +4,9 @@ fecha: 2026-11-03
 categoria: "Estrategias"
 resumen: "Una o dos frases que se muestran en el listado y en Google."
 imagen: "assets/img/posts/titulo-del-articulo.webp"
+# Opcional: segundo botón al final del artículo (siguiente paso)
+siguiente_texto: "Ver la ficha de GEDA"
+siguiente_url: "/inversion-tactica-geda/"
 ---
 
 Escribe aquí el texto en Markdown.

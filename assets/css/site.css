@@ -1071,3 +1071,17 @@ main .legal-sec h2{margin-bottom:.8rem}
   .hero h1{font-size:2.05rem;margin-bottom:.6rem}
   .lead{margin-bottom:.9rem}
 }
+
+/* V37 · desplegable «Para los que quieren los números» en artículos */
+.post-content details.numeros{margin:2rem 0 1.5rem;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.post-content details.numeros>summary{cursor:pointer;padding:1rem 1.2rem;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.post-content details.numeros>summary::-webkit-details-marker{display:none}
+.post-content details.numeros>summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent)}
+.post-content details.numeros[open]>summary::after{content:"−"}
+.post-content details.numeros>:not(summary){margin-left:1.2rem;margin-right:1.2rem}
+.post-content details.numeros>:last-child{margin-bottom:1.2rem}
+
+/* V39 · microtexto bajo los botones de la portada y enlace al informe junto al formulario */
+.hero .hero-micro{margin:.6rem 0 0;font-size:var(--fs-xs,.8rem);color:var(--muted)}
+.cta-intro .sub-sample{margin-top:.75rem;font-size:var(--fs-sm);color:var(--muted)}
+.cta-intro .sub-sample a{font-weight:600}

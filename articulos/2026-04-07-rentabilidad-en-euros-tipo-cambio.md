@@ -4,6 +4,8 @@ fecha: 2026-04-07
 categoria: "Metodología"
 resumen: "Por qué todas las rentabilidades del blog están en euros y cómo el tipo de cambio euro-dólar puede sumar o restar varios puntos a tu resultado."
 imagen: "assets/img/posts/rentabilidad-en-euros-tipo-cambio.webp"
+siguiente_texto: "Ver cómo calculo las cifras"
+siguiente_url: "/metodologia/"
 ---
 
 La **rentabilidad en euros** no es un número absoluto. Es una medida incompleta si no se tiene en cuenta en qué moneda está expresada.

@@ -5,6 +5,8 @@ actualizado: 2026-10-15
 categoria: "Brókers"
 resumen: "Mi configuración real de brókers para cada estrategia: Interactive Brokers, DEGIRO, Openbank, Renta 4, Revolut X, Bankinter e ING. Actualizado en octubre de 2026."
 imagen: "assets/img/posts/que-brokers-utilizo.webp"
+siguiente_texto: "Ver cómo aplico el informe del mes"
+siguiente_url: "/aprende/como-aplico-el-informe-del-mes/"
 ---
 
 No busco el mejor bróker del mundo. Busco el mejor para cada tipo de inversión, siguiendo los criterios que te contaba en [Qué bróker elegir en 2026](/aprende/mejores-brokers-espana-2026/).

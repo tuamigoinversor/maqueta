@@ -5,6 +5,8 @@ categoria: "Fiscalidad"
 resumen: "Cómo tributa un plan de pensiones frente a un fondo de inversión al aportar, mientras crece y al rescatar, con los límites y tipos vigentes en 2026."
 imagen: "assets/img/posts/planes-de-pensiones-vs-fondos-de-inversion.webp"
 actualizado: 2026-10-20
+siguiente_texto: "Ver la estrategia HORIZONTE"
+siguiente_url: "/plan-pensiones-moderado-horizonte/"
 ---
 
 Hay una pregunta que me llega constantemente.

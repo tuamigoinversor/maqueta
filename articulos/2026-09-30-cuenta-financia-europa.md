@@ -5,6 +5,8 @@ categoria: "Fiscalidad"
 resumen: "La Cuenta de Ahorro e Inversión Financia Europa ya tiene norma en vigor, pero todavía no puede contratarse y sigue pendiente de convalidación en el Congreso. Te explico cómo funciona, qué ventajas fiscales ofrece y qué falta por conocer."
 imagen: "assets/img/posts/cuenta-financia-europa.webp"
 actualizado: 2026-10-18
+siguiente_texto: "Ver la estrategia GEDA"
+siguiente_url: "/inversion-tactica-geda/"
 ---
 
 La **Cuenta de Ahorro e Inversión Financia Europa** es un nuevo producto pensado para canalizar parte del ahorro de los particulares hacia los mercados europeos con un tratamiento fiscal favorable. Pero conviene precisar en qué punto está: **la norma está en vigor, todavía está pendiente de convalidación en el Congreso y la cuenta aún no puede contratarse.**

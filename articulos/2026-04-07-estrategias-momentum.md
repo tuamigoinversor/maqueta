@@ -4,6 +4,8 @@ fecha: 2026-04-07
 categoria: "Estrategias"
 resumen: "Qué es el momentum, qué dice la investigación académica y qué autores han influido en cómo lo aplico en GEDA, GEN-Z y CRYPTO."
 imagen: "assets/img/posts/estrategias-momentum.webp"
+siguiente_texto: "Ver cómo aplico el momentum en GEDA"
+siguiente_url: "/inversion-tactica-geda/"
 ---
 
 Si llevas tiempo leyendo el blog, ya sabes que mis estrategias tácticas se basan en un mismo principio:

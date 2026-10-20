@@ -5,6 +5,8 @@ categoria: "Fiscalidad"
 resumen: "Cómo planifico el rescate de un plan de pensiones tras un ERE para pagar menos IRPF: tramos de aportaciones, reducción del 40 % y reparto por años."
 imagen: "assets/img/posts/rescatar-plan-pensiones-ere.webp"
 actualizado: 2026-10-20
+siguiente_texto: "Ver la estrategia HORIZONTE"
+siguiente_url: "/plan-pensiones-moderado-horizonte/"
 ---
 
 Últimamente muchos suscriptores del blog me estáis preguntando por este tema.
