@@ -47,8 +47,9 @@ def read_posts():
         u = fm.get('actualizado')
         if isinstance(u, str): u = datetime.date.fromisoformat(u)
         posts.append(dict(slug=slug, title=str(fm.get('title', slug)), date=d, updated=u, cat=str(fm.get('categoria') or 'Aprende'),
-                          summary=str(fm.get('resumen') or ''), image=str(fm.get('imagen') or ''), md=m.group(2)))
-    posts.sort(key=lambda p: p['updated'] or p['date'], reverse=True)
+                          summary=str(fm.get('resumen') or ''), image=str(fm.get('imagen') or ''), md=m.group(2),
+                          next_text=str(fm.get('siguiente_texto') or ''), next_url=str(fm.get('siguiente_url') or '')))
+    posts.sort(key=lambda p: p['date'], reverse=True)   # V38: orden por fecha de publicación (lo nuevo, siempre primero)
     return posts
 
 
@@ -97,7 +98,7 @@ def card(p, base, i):
     return '''<article class="post reveal" data-cat="%(cat)s">
   %(media)s
   <div class="post-body"><small>%(cat)s · %(date)s</small><h3><a href="%(base)saprende/%(slug)s/index.html">%(title)s</a></h3><p>%(summary)s</p><a class="more" href="%(base)saprende/%(slug)s/index.html">Leer artículo %(arrow)s<span class="sr-only">: %(title)s</span></a></div>
-</article>''' % dict(cat=esc(p['cat']), media=media, base=base, date=(fdate(p['updated']) + ' (actualizado)') if p['updated'] else fdate(p['date']), slug=p['slug'], title=esc(p['title']), summary=esc(p['summary']), arrow=ARROW)
+</article>''' % dict(cat=esc(p['cat']), media=media, base=base, date=fdate(p['date']) + (' · actualizado el ' + fdate(p['updated']) if p['updated'] else ''), slug=p['slug'], title=esc(p['title']), summary=esc(p['summary']), arrow=ARROW)
 
 
 def write(rel, content):
@@ -106,9 +107,21 @@ def write(rel, content):
     open(full, 'w', encoding='utf8').write(content)
 
 
-def cta_band(base):
+def site_url(base, url):
+    """Ruta de la web («/informes/», «/index.html#test») -> ruta relativa a la página."""
+    u = url.lstrip('/')
+    path, _, frag = u.partition('#')
+    if path == '' or path.endswith('/'):
+        path += 'index.html'
+    return base + path + ('#' + frag if frag else '')
+
+
+def cta_band(base, p=None):
+    nxt = ''
+    if p and p.get('next_text') and p.get('next_url'):   # V39: siguiente paso propio de cada artículo
+        nxt = '<a href="%s" class="btn btn-ghost">%s</a>' % (site_url(base, p['next_url']), esc(p['next_text']))
     return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Cada día 1 te mando por correo qué tengo en cada estrategia y qué cambio. Lo lees, decides y, si quieres, lo copias en tu bróker. Gratis y sin compromiso.</p></div>
-<div class="cta-row"><a href="%sindex.html#suscripcion" class="btn btn-primary magnetic">Quiero el informe gratis %s</a></div></div>''' % (base, ARROW)
+<div class="cta-row"><a href="%sindex.html#suscripcion" class="btn btn-primary magnetic">Quiero el informe gratis %s</a>%s</div></div>''' % (base, ARROW, nxt)
 
 
 def build_post(p, posts):
@@ -139,7 +152,7 @@ def build_post(p, posts):
 </div></article>
 %(more)s
 </main>
-''' % dict(b=base, cat=esc(p['cat']), title=esc(p['title']), iso=p['date'].isoformat(), date=fdate(p['date']), upd=(' · Actualizado el <time datetime="%s">%s</time>' % (p['updated'].isoformat(), fdate(p['updated']))) if p['updated'] else '', mins=mins, img=img, body=body, cta=cta_band(base), more=more_html)
+''' % dict(b=base, cat=esc(p['cat']), title=esc(p['title']), iso=p['date'].isoformat(), date=fdate(p['date']), upd=(' · Actualizado el <time datetime="%s">%s</time>' % (p['updated'].isoformat(), fdate(p['updated']))) if p['updated'] else '', mins=mins, img=img, body=body, cta=cta_band(base, p), more=more_html)
             + C.footer_and_floating(base, False))
     write('aprende/%s/index.html' % p['slug'], page)
 

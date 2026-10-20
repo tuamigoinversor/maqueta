@@ -1,5 +1,50 @@
-TU AMIGO INVERSOR · WEB V35
+TU AMIGO INVERSOR · WEB V40
 ===========================
+
+CAMBIOS V40 (analítica sin cookies)
+  - GoatCounter instalado en todas las páginas (y en tools/chrome.py para los artículos): código «tuamigoinversor»,
+    panel en https://tuamigoinversor.goatcounter.com. No usa cookies: no hace falta aviso de cookies.
+  - Clics medidos como eventos (tai.js, apartado 12b), con el nombre de la página y el lugar del botón:
+      suscribirse/<página>/<lugar>   botones «Quiero el informe» (cabecera, menú, boton-fijo, articulo, suscripcion…)
+      ver-informes/<página>/<lugar>  enlaces a la página de informes
+      pdf/AAAA-MM-abrir | -descargar informes en PDF
+      puerta/soy-nuevo | ya-invierto las dos puertas de la portada
+      siguiente/<artículo>           segundo botón del final de cada artículo
+  - Las altas del formulario no se ven en GoatCounter (el formulario de Brevo es de otro dominio): míralas en Brevo.
+  - Política de privacidad: párrafo sobre GoatCounter (estadísticas agregadas, sin cookies ni datos identificativos).
+  - En local (file://) no cuenta nada: empieza a contar cuando la web esté publicada en el dominio.
+
+CAMBIOS V39 (tras la auditoría de marketing)
+  - Sin aviso de cookies: la web no usa cookies de analítica, publicidad ni seguimiento. Eliminados el aviso, el enlace
+    «Configurar cookies» del pie (en todas las páginas y en tools/chrome.py) y su código en tai.js. La política de privacidad
+    explica que solo se guarda el tema claro/oscuro en el navegador y que el formulario de Brevo puede usar sus propias cookies.
+    Si algún día añades analítica con cookies, habrá que volver a pedir consentimiento antes de cargarla.
+  - Portada: «qué tengo, con mi propio dinero, en mis seis estrategias» y microtexto bajo los botones
+    «Sin tarjeta · Un correo al mes · Baja con un clic».
+  - Suscripción: enlace «¿Quieres verlo antes? Mira un informe de ejemplo» junto al formulario.
+  - Blog: las tarjetas muestran la fecha de publicación y, si la hay, «actualizado el…» (antes solo la de actualización).
+  - Artículos: segundo botón al final con un siguiente paso propio (campos opcionales siguiente_texto y siguiente_url en la
+    cabecera del .md; ver _plantilla.md). Puesto en los 14 artículos.
+
+CAMBIOS V38 (publicación escalonada)
+  - Fechas de publicación: «Cómo aplico el informe del mes» el 12 oct 2026, «Cómo rebalanceo ROCA e IMPULSO» el 19 oct y
+    «Con cuánto dinero seguir cada estrategia» el 26 oct (programado: no aparece en la web generada hoy; GitHub lo publica solo
+    en la ejecución diaria del 26 de octubre, o al volver a ejecutar tools/build_blog.py a partir de ese día).
+  - El blog se ordena por fecha de publicación (antes, por «actualizado»): los artículos nuevos salen siempre primero.
+  - Fichas de ROCA e IMPULSO: revisión en enero y julio con margen del 15% del peso de cada activo (antes «dentro de un rango
+    razonable»), en el bloque «Cómo funciona» y en la pregunta frecuente sobre el rebalanceo (también en los datos para Google).
+  - Artículo «Con cuánto dinero…»: versión sencilla (respuesta corta, ejemplo, regla de 1.000 € por posición, cambio de divisa)
+    y los cálculos en un desplegable «Para los que quieren los números». Tarifas de Interactive Brokers y DEGIRO comprobadas (2026).
+
+CAMBIOS V37 (nuevo artículo)
+  - Nuevo artículo «Cómo aplico el informe del mes, paso a paso» (articulos/2026-10-12-como-aplico-el-informe-del-mes.md),
+    categoría Operativa, con el informe de octubre de 2026 como ejemplo.
+  - Nuevo artículo «Cómo rebalanceo ROCA e IMPULSO» (articulos/2026-10-19-rebalanceo-roca-impulso.md): regla enero/julio
+    con margen del 15 % de cada peso (comparado con 10 %, 20 % y 5 puntos); ejemplo de IMPULSO en 2025 y simulación 2016–2026 calculada con estrategias_limpias.xlsx.
+  - Nuevo artículo «Con cuánto dinero seguir cada estrategia» (articulos/2026-10-26-con-cuanto-dinero-seguir-cada-estrategia.md):
+    operaciones al año contadas en estrategias_limpias.xlsx (GEDA ~15 cambios, GEN-Z ~7-8, CRYPTO ~10), coste con 1 € y 5 €
+    por operación y tabla orientativa. Límite de planes individuales 2026: 1.500 €/año.
+  - PENDIENTE: portadas en assets/img/posts/como-aplico-el-informe-del-mes.webp y rebalanceo-roca-impulso.webp y con-cuanto-dinero-seguir-cada-estrategia.webp (mientras no exista, el blog muestra un hueco).
 
 CAMBIOS V36 (móvil más compacto)
   - En pantallas de móvil (≤600 px): interlineado del texto 1,45 (antes ~1,6), notas y tarjetas 1,35, titulares 1,1.
@@ -61,7 +106,7 @@ CAMBIOS V30: REVISIÓN DEL BLOG
     hasta 100.000 € en toda la UE.
   - Formato: títulos con jerarquía correcta (sin saltos), sin emojis en títulos, sin líneas separadoras, enlaces internos limpios,
     tablas con cabecera, resúmenes escritos para Google en todos los artículos e imágenes rotas de WordPress eliminadas.
-  - Nuevo campo «actualizado:» en los artículos: muestra «Actualizado el…», ordena el blog por esa fecha y lo indica a Google.
+  - Nuevo campo «actualizado:» en los artículos: muestra «Actualizado el…», lo indica a Google. Desde la V38 el blog se ordena por la fecha de publicación («fecha:»).
   - Redirección desde /aprende/brokers/cuenta-financia-europa/ (enlace del informe de octubre) a la dirección actual.
 
 PENDIENTE DEL BLOG

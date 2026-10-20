@@ -46,6 +46,8 @@ def head(title, desc, base, scripts, og_title=None, ld=''):
 <script defer src="%(base)sassets/js/chart.umd.js"></script>
 %(scripts)s
 %(ld)s
+<!-- Analítica sin cookies (GoatCounter) -->
+<script data-goatcounter="https://tuamigoinversor.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 ''' % dict(base=base, title=title, desc=desc, og=og_title or title, scripts=scripts_html, ld=ld)
 
@@ -128,7 +130,7 @@ def footer_and_floating(base, home):
       <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="%(base)scartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="%(base)scartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li></ul></nav>
       <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="%(base)sinversion-tactica-geda/index.html">GEDA</a></li><li><a href="%(base)sinversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="%(base)sinversion-criptomonedas-crypto/index.html">CRYPTO</a></li><li><a href="%(base)splan-pensiones-moderado-horizonte/index.html">HORIZONTE <small class="pp">plan de pensiones</small></a></li></ul></nav>
       <nav aria-label="Herramientas y proyecto"><h2>Empieza por aquí</h2><ul><li><a href="%(base)sempieza-aqui/index.html">Explicado desde cero</a></li><li><a href="%(base)sejemplo-practico/index.html">Ejemplo práctico</a></li><li><a href="%(base)scomparador/index.html">Comparador</a></li><li><a href="%(test)s" data-quiz>Test de perfil</a></li><li><a href="%(base)scombinar-estrategias/index.html">Combinar estrategias</a></li><li><a href="%(base)sinformes/index.html">Informes</a></li><li><a href="%(base)smetodologia/index.html">Metodología</a></li><li><a href="%(base)sglosario/index.html">Glosario</a></li><li><a href="%(base)sblog/index.html">Blog</a></li><li><a href="%(base)ssobre-mi/index.html">Sobre mí</a></li></ul></nav>
-      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="%(base)saviso-legal/index.html">Aviso legal</a></li><li><a href="%(base)sprivacidad/index.html">Política de privacidad</a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="%(base)saviso-legal/index.html">Aviso legal</a></li><li><a href="%(base)sprivacidad/index.html">Política de privacidad</a></li></ul></nav>
     </div>
     <div class="legal">
       <p><strong>Aviso:</strong> la información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento financiero ni una recomendación personalizada de inversión. Las inversiones conllevan riesgo y pueden implicar la pérdida total o parcial del capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Cada inversor debe realizar su propio análisis y tomar decisiones en función de su situación personal.</p>
@@ -149,16 +151,6 @@ def footer_and_floating(base, home):
     </div>
   </div>
 </div>
-<!-- Cookies -->
-<div class="cookie" id="cookie" role="dialog" aria-labelledby="ckTitle" aria-describedby="ckText">
-  <strong id="ckTitle">Tu privacidad</strong>
-  <p id="ckText">Uso solo cookies técnicas necesarias. Con tu consentimiento, usaría cookies analíticas para mejorar la web. Puedes cambiar tu elección en cualquier momento desde el pie de página.</p>
-  <div class="cta-row">
-    <button class="btn btn-ghost btn-sm" type="button" id="ckReject">Rechazar</button>
-    <button class="btn btn-primary btn-sm" type="button" id="ckAccept">Aceptar</button>
-  </div>
-</div>
-
 <button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
 <div class="sticky-cta" id="stickyCta"><small><strong>Gratis</strong><br>El informe del día 1 en tu correo</small><a href="%(sub)s" class="btn btn-primary btn-sm">Quiero el informe</a></div>
 </body>
