@@ -1,6 +1,13 @@
 TU AMIGO INVERSOR · WEB V35
 ===========================
 
+CAMBIOS V36 (móvil más compacto)
+  - En pantallas de móvil (≤600 px): interlineado del texto 1,45 (antes ~1,6), notas y tarjetas 1,35, titulares 1,1.
+  - Menos espacio vertical entre secciones (2rem), entre párrafos, títulos, tarjetas y rejillas.
+  - En móvil se ocultan el móvil decorativo de «Cómo funciona» y la cita destacada de la cabecera de cada ficha.
+  - Titular de portada algo más pequeño en móvil; bloques plegables («Ver todo») un poco más cortos.
+  - Escritorio sin cambios. Altura en móvil (375 px): portada −14 %, fichas −9 %, artículos −4 %, Sobre mí −6 %.
+
 CAMBIOS V35 (a partir de la auditoría externa)
   - Comparador: nuevas filas «Peor caída con dinero real» (con el año de inicio) y «Principal inconveniente»; la caída anterior se
     llama ahora «Peor caída (histórico completo)».
