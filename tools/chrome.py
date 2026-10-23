@@ -58,7 +58,7 @@ def nav_links(base, home, current, mobile=False):
         return ('#%s' % anchor) if home else ('%sindex.html#%s' % (base, anchor))
     P = lambda p: base + p + '/index.html'
     estr = [('estrategias', a('estrategias'), 'Las seis estrategias', ''), ('comparador', P('comparador'), 'Compáralas frente a frente', ''),
-            ('test', a('test'), 'Test de perfil (3 min)', ' data-quiz'), ('combinar', P('combinar-estrategias'), 'Combinar estrategias', '')]
+            ('test', a('test'), 'Test de riesgo (3 min)', ' data-quiz'), ('combinar', P('combinar-estrategias'), 'Combinar estrategias', '')]
     como = [('guia', P('empieza-aqui'), 'Explicado desde cero', ''), ('ejemplo', P('ejemplo-practico'), 'Un ejemplo práctico, paso a paso', ''),
             ('metodologia', P('metodologia'), 'Metodología y cálculos', ''), ('glosario', P('glosario'), 'Glosario', '')]
     tail = [('informes', P('informes'), 'Informes', ''), ('blog', P('blog'), 'Blog', ''), ('sobre-mi', P('sobre-mi'), 'Sobre mí', '')]
@@ -124,13 +124,13 @@ def footer_and_floating(base, home):
     <div class="foot-grid">
       <div>
         <a href="%(logo)s" class="logo" style="margin-bottom:1rem"><img class="logo-mark" src="%(base)sassets/img/logo-tai.jpg" width="40" height="40" alt="">Tu Amigo Inversor</a>
-        <p>Te cuento cada mes qué hago con mi dinero: estrategias con reglas claras, sin corazonadas. Tú decides si lo copias.</p>
+        <p>Te cuento cada mes qué hago con mi dinero: estrategias con reglas claras, sin corazonadas. Lo que hagas con tu dinero lo decides tú.</p>
         <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
       </div>
       <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="%(base)scartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="%(base)scartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li></ul></nav>
       <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="%(base)sinversion-tactica-geda/index.html">GEDA</a></li><li><a href="%(base)sinversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="%(base)sinversion-criptomonedas-crypto/index.html">CRYPTO</a></li><li><a href="%(base)splan-pensiones-moderado-horizonte/index.html">HORIZONTE <small class="pp">plan de pensiones</small></a></li></ul></nav>
-      <nav aria-label="Herramientas y proyecto"><h2>Empieza por aquí</h2><ul><li><a href="%(base)sempieza-aqui/index.html">Explicado desde cero</a></li><li><a href="%(base)sejemplo-practico/index.html">Ejemplo práctico</a></li><li><a href="%(base)scomparador/index.html">Comparador</a></li><li><a href="%(test)s" data-quiz>Test de perfil</a></li><li><a href="%(base)scombinar-estrategias/index.html">Combinar estrategias</a></li><li><a href="%(base)sinformes/index.html">Informes</a></li><li><a href="%(base)smetodologia/index.html">Metodología</a></li><li><a href="%(base)sglosario/index.html">Glosario</a></li><li><a href="%(base)sblog/index.html">Blog</a></li><li><a href="%(base)ssobre-mi/index.html">Sobre mí</a></li></ul></nav>
-      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="%(base)saviso-legal/index.html">Aviso legal</a></li><li><a href="%(base)sprivacidad/index.html">Política de privacidad</a></li></ul></nav>
+      <nav aria-label="Herramientas y proyecto"><h2>Empieza por aquí</h2><ul><li><a href="%(base)sempieza-aqui/index.html">Explicado desde cero</a></li><li><a href="%(base)sejemplo-practico/index.html">Ejemplo práctico</a></li><li><a href="%(base)scomparador/index.html">Comparador</a></li><li><a href="%(test)s" data-quiz>Test de riesgo</a></li><li><a href="%(base)scombinar-estrategias/index.html">Combinar estrategias</a></li><li><a href="%(base)sinformes/index.html">Informes</a></li><li><a href="%(base)smetodologia/index.html">Metodología</a></li><li><a href="%(base)sglosario/index.html">Glosario</a></li><li><a href="%(base)sblog/index.html">Blog</a></li><li><a href="%(base)ssobre-mi/index.html">Sobre mí</a></li></ul></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="%(base)saviso-legal/index.html">Aviso legal</a></li><li><a href="%(base)sprivacidad/index.html">Política de privacidad</a></li><li><a href="%(base)srecomendaciones/index.html">Cómo elaboro los informes</a></li></ul></nav>
     </div>
     <div class="legal">
       <p><strong>Aviso:</strong> la información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento financiero ni una recomendación personalizada de inversión. Las inversiones conllevan riesgo y pueden implicar la pérdida total o parcial del capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Cada inversor debe realizar su propio análisis y tomar decisiones en función de su situación personal.</p>
@@ -139,20 +139,20 @@ def footer_and_floating(base, home):
   </div>
 </footer>
 
-<!-- Test de perfil (ventana emergente) -->
+<!-- Test de riesgo (ventana emergente) -->
 <div class="modal" id="quizModal" aria-hidden="true">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
     <button class="icon-btn modal-close" type="button" aria-label="Cerrar test"><svg class="icon"><use href="#i-x"/></svg></button>
     <div class="modal-content">
-      <span class="eyebrow">Test de perfil</span>
-      <h2 id="quizTitle" style="font-size:var(--fs-xl);margin:.3rem 0 .4rem">¿Qué estrategia encaja contigo?</h2>
-      <p style="color:var(--muted);margin-bottom:1.4rem">Diez preguntas, unos 3 minutos. Te explico tu perfil y qué estrategias encajan con él.</p>
+      <span class="eyebrow">Test de riesgo</span>
+      <h2 id="quizTitle" style="font-size:var(--fs-xl);margin:.3rem 0 .4rem">¿Cuánto riesgo toleras?</h2>
+      <p style="color:var(--muted);margin-bottom:1.4rem">Diez preguntas, unos 3 minutos. Te explico tu tolerancia al riesgo y qué significa en caídas reales.</p>
       <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </div>
 </div>
 <button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
-<div class="sticky-cta" id="stickyCta"><small><strong>Gratis</strong><br>El informe del día 1 en tu correo</small><a href="%(sub)s" class="btn btn-primary btn-sm">Quiero el informe</a></div>
+<div class="sticky-cta" id="stickyCta"><small><strong>Gratis</strong><br><span data-countdown-short>El informe del día 1 en tu correo</span></small><a href="%(sub)s" class="btn btn-primary btn-sm">Quiero el informe</a></div>
 </body>
 </html>
 ''' % dict(base=base, logo=('#main' if home else base + 'index.html'), test=test, sub=sub, sobre=SOBRE_MI)

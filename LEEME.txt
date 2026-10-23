@@ -1,5 +1,40 @@
-TU AMIGO INVERSOR · WEB V40
+TU AMIGO INVERSOR · WEB V43
 ===========================
+
+CAMBIOS V43 (generador de informes y mejoras de la web)
+  - NUEVO tools/informe/: generador del informe mensual en HTML y PDF con el diseño nuevo. Lee el Excel
+    (tools/informe/datos/estrategias_limpias.xlsx), referencias.csv, horizonte_planes.csv, nombres.yaml y el archivo
+    del mes (datos/2026-10.yaml). Instrucciones en tools/informe/COMO_USAR.txt. La carpeta tools no se publica en la web,
+    pero si el repositorio es público, el Excel y los datos del mes se podrán ver en GitHub.
+  - Portada: mapa de calor «2026, mes a mes» en Resultados (del mes más reciente al más antiguo). Se regenera con
+    python tools/build_home_heatmap.py a partir de assets/js/series.js (marcas HEATMAP:INICIO / FIN).
+  - Cuenta atrás hasta el próximo informe (día 1, 9:00 de Madrid), en días y horas: bloque de suscripción, página de
+    informes y botón fijo del móvil («Próximo informe: 1 de noviembre»). Se calcula sola en el navegador.
+
+CAMBIOS V42 (revisión para no prestar asesoramiento; guía CNMV «Finfluencers», mayo de 2026)
+  - Test: pasa a ser «Test de riesgo» educativo. Da la tolerancia al riesgo y muestra las seis estrategias ordenadas por riesgo,
+    sin filtrar ni decir cuáles «encajan». Quitados «Estrategias que encajan con tu perfil», «las que no encajan» y el botón
+    «Comparar mis estrategias». Ventana: «¿Cuánto riesgo toleras?». NO volver a añadir una selección personal de estrategias.
+  - Quitadas las ofertas personales de producto («escríbeme y te propongo ETF equivalentes», «te ayudo a encontrar la mejor
+    opción en tu caso», «te indico cuál uso yo») en ROCA, IMPULSO, GEDA y ejemplo práctico. Ahora se explica qué comprobar
+    (que siga el mismo índice) y que no se responden consultas sobre productos para un caso concreto.
+  - Nueva página /recomendaciones/ «Cómo elaboro los informes y conflictos de interés»: quién elabora, intereses (invierto en
+    lo que publico; opero el primer día hábil, antes o después del envío; sin acuerdos con brókers), método, hechos vs opinión,
+    plazo, frecuencia y riesgos. Enlazada en el pie de todas las páginas, en el aviso legal y en la página de informes.
+  - FAQ: nueva respuesta a «¿Es asesoramiento financiero?» y nueva pregunta «¿Puedo preguntarte qué hacer en mi caso?» (web y datos para Google).
+  - Lenguaje: fuera las frases de acción directa («lo copias en tu bróker», «¿Te encaja?», «Es para ti si…»). Ejemplo práctico,
+    guía, metodología, CRYPTO y artículos (pasos en primera persona: «vendo», «apunto», «lo que haría yo»).
+  - PENDIENTE (tuyo): en la plantilla del informe, fecha y hora de envío, autor, enlace a /recomendaciones/, separar datos de
+    opinión. Correo de bienvenida: añadir que no se responden consultas sobre casos personales. Revisión por abogado especialista.
+
+CAMBIOS V41
+  - Portadas nuevas: «Cómo aplico el informe del mes», «Cómo rebalanceo ROCA e IMPULSO» y «Planes vs fondos» (sustituye a la
+    antigua con el 19–28 %). Convertidas a WebP 1200x800 en assets/img/posts/.
+  - Portada de la web: vuelve el bloque «Del blog · Lo último que he escrito» con los 3 artículos más recientes, entre
+    Resultados y Preguntas frecuentes, y el enlace «Ver todos los artículos». Se rellena solo con tools/build_blog.py
+    (marcas BLOG:INICIO / BLOG:FIN). En móvil, formato compacto: miniatura + título. Se alternan los fondos de FAQ y Suscripción.
+  - PENDIENTE: portada de «Con cuánto dinero seguir cada estrategia» (con-cuanto-dinero-seguir-cada-estrategia.webp) y la
+    de «Entra poco a poco» (lema «gana a lo grande»).
 
 CAMBIOS V40 (analítica sin cookies)
   - GoatCounter instalado en todas las páginas (y en tools/chrome.py para los artículos): código «tuamigoinversor»,
@@ -63,7 +98,7 @@ CAMBIOS V35 (a partir de la auditoría externa)
   - Inconvenientes editables en assets/js/tai.js (campo con:).
 
 CAMBIOS V34: MÓVIL
-  - Test de perfil en móvil: pantalla completa, cabecera compacta y botones Atrás/Siguiente siempre visibles abajo.
+  - Test de riesgo en móvil: pantalla completa, cabecera compacta y botones Atrás/Siguiente siempre visibles abajo.
     Comprobado en 375x667 (iPhone SE) y 390x844: las 10 preguntas caben sin hacer scroll.
   - Fichas en móvil un 20–25 % más cortas: menos aire entre secciones, interlineado 1,6 en móvil y las secciones de consulta
     (historial, señales, resultados y entornos) plegadas con un botón «Ver todo».
@@ -115,7 +150,7 @@ PENDIENTE DEL BLOG
 
 CHEQUEO FINAL V29
   - Revisado: enlaces y anclas, imágenes y PDF, IDs, encabezados, textos alternativos, etiquetas HTML, errores JS, desbordes en móvil (375 px)
-    y escritorio, modo oscuro, menú y menú móvil, filtros, FAQ, test de perfil completo, comparador, combinar y gráficos de las fichas.
+    y escritorio, modo oscuro, menú y menú móvil, filtros, FAQ, test de riesgo completo, comparador, combinar y gráficos de las fichas.
   - Cifras cruzadas entre tai.js, series.js, fichas, comparador, tabla de resultados de la home, metodología y estrategias_limpias.xlsx.
   - Corregido: los totales anuales del mapa de calor de las fichas salían de sumar meses redondeados a 2 decimales (diferencias de 0,1 en
     9 años: ROCA 2019, IMPULSO 2017 y 2020, GEDA 2017 y 2023, GEN-Z 2021, CRYPTO 2021, 2024 y 2025). Ahora usan el total exacto del Excel
@@ -149,7 +184,7 @@ ACTUALIZACIÓN TRIMESTRAL DE LA WEB (tras el informe de enero, abril, julio y oc
   1. PDF: guárdalo como informes/tuamigoinversor-informe-AAAA-MM.pdf y su miniatura en assets/img/informes/informe-AAAA-MM.webp.
   2. informes/index.html: si añades un ejemplo, ponlo arriba (mueve «Ejemplo más reciente» y la clase rep-first). No hace falta publicar el del mes en curso.
   3. index.html: panel del hero («Qué cambia en…», fecha y enlace al PDF), cambios del móvil de «Cómo funciona» y tabla de Resultados.
-  4. Series mensuales: fichas → tools/build_series.py; después revisa avg/realAvg/y26 en assets/js/tai.js, los datos de assets/js/comparador.js
+  4. Series mensuales: fichas → tools/build_series.py y después tools/build_home_heatmap.py (mapa de calor de la portada); después revisa avg/realAvg/y26 en assets/js/tai.js, los datos de assets/js/comparador.js
      y la constante YX (totales anuales exactos) de cada ficha.
   5. Fechas «Datos a …» (buscar «30 sep 2026» en toda la web) y bloque «En resumen» de las fichas si cambia la peor caída o el mejor/peor año.
   6. python3 tools/check_site.py
@@ -224,7 +259,7 @@ CAMBIOS V23 (sobre la V22)
 
 CAMBIOS V22 (sobre la V21)
   - Menú unificado en las 30 páginas (se genera desde tools/chrome.py): Estrategias · Empieza aquí · Combinar estrategias · Recursos (desplegable: Ejemplo práctico,
-    Test de perfil, Comparador, Metodología, Glosario) · Blog · Sobre mí. En móvil, lista plana. El pie también es el mismo en todas las páginas.
+    Test de riesgo, Comparador, Metodología, Glosario) · Blog · Sobre mí. En móvil, lista plana. El pie también es el mismo en todas las páginas.
   - Home: nuevo bloque «Por dónde empezar» antes de «Quién soy» con tres cajas destacadas (Empieza aquí, Combina estrategias, Ejemplo práctico).
     Bajo la tabla de las 6 estrategias del hero hay un enlace al Comparador. La herramienta «Simulador» pasa a «Combinar y simular».
   - HORIZONTE: es un PLAN DE PENSIONES y se cataloga como ASIGNACIÓN TÁCTICA (antes «cartera permanente»), con revisión mensual (como indica su ficha).
@@ -257,7 +292,7 @@ CAMBIOS V15
 CAMBIOS V13 (+ ajustes finales)
   - Imagen nueva de IMPULSO, precio en la FAQ (30 €/semestre o 50 €/año) y Brevo como proveedor de correo en la política de privacidad.
   - Nombre: "José Manuel García" en toda la web (antes "José M. García").
-  - Test de perfil: 10 preguntas (situación, conocimientos, riesgo y objetivos, puntúan 1-4; máx. 40). Perfil Conservador/Moderado/Dinámico/Agresivo
+  - Test de riesgo: 10 preguntas (situación, conocimientos, riesgo y objetivos, puntúan 1-4; máx. 40). Perfil Conservador/Moderado/Dinámico/Agresivo
     con reglas de prudencia (p. ej. dinero necesario en <2 años = máx. Conservador) y explicación en lenguaje natural.
     Muestra las estrategias que encajan (sin porcentajes) y las que no, con el motivo. Todo se calcula en el navegador.
     Código en assets/js/tai.js (QUIZ, evaluate, STRAT_WHY). Umbrales: <=18 Conservador, <=26 Moderado, <=34 Dinámico, resto Agresivo.

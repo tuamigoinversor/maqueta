@@ -120,7 +120,7 @@ def cta_band(base, p=None):
     nxt = ''
     if p and p.get('next_text') and p.get('next_url'):   # V39: siguiente paso propio de cada artículo
         nxt = '<a href="%s" class="btn btn-ghost">%s</a>' % (site_url(base, p['next_url']), esc(p['next_text']))
-    return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Cada día 1 te mando por correo qué tengo en cada estrategia y qué cambio. Lo lees, decides y, si quieres, lo copias en tu bróker. Gratis y sin compromiso.</p></div>
+    return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Cada día 1 te mando por correo qué tengo en cada estrategia y qué cambio. Lo lees y decides tú qué hacer con tu dinero. Gratis y sin compromiso.</p></div>
 <div class="cta-row"><a href="%sindex.html#suscripcion" class="btn btn-primary magnetic">Quiero el informe gratis %s</a>%s</div></div>''' % (base, ARROW, nxt)
 
 
@@ -191,8 +191,8 @@ def update_home(posts):
     path = os.path.join(ROOT, 'index.html'); h = open(path, encoding='utf8').read()
     a, b = h.find('<!-- BLOG:INICIO -->'), h.find('<!-- BLOG:FIN -->')
     if a < 0 or b < 0:
-        return  # la home (V26) ya no muestra artículos: enlaza al blog desde la FAQ
-    block = '<!-- BLOG:INICIO -->\n    <div class="blog">\n' + '\n'.join(card(p, '', i) for i, p in enumerate(posts[:3])) + '\n    </div>\n    '
+        return  # sin marcas BLOG:INICIO/FIN en la home: no se muestran artículos
+    block = '<!-- BLOG:INICIO -->\n    <div class="blog blog-home">\n' + '\n'.join(card(p, '', i) for i, p in enumerate(posts[:3])) + '\n    </div>\n    '
     open(path, 'w', encoding='utf8').write(h[:a] + block + h[b:])
 
 
