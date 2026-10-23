@@ -131,10 +131,10 @@ En **ROCA** o **IMPULSO**, que son más estables, el impacto del momento de entr
 
 Lo que hago yo:
 
-- ✅ Divide siempre en al menos 2 entradas
-- ✅ En estrategias agresivas, usa 4 o más
-- ✅ Sé constante: si decides entrar mes a mes, entra mes a mes, aunque ese mes baje
-- ✅ No intentes adivinar cuál es el mejor mes para cada entrada — no funciona
+- ✅ Divido siempre la entrada en al menos 2 partes
+- ✅ En las estrategias agresivas, uso 4 o más
+- ✅ Soy constante: si decido entrar mes a mes, entro mes a mes, aunque ese mes baje
+- ✅ No intento adivinar cuál es el mejor mes para cada entrada: no funciona
 
 ## La idea clave
 

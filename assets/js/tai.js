@@ -1,7 +1,7 @@
 /* =========================================================
    TAI · código común de todas las páginas
    Datos de las estrategias, utilidades, tema claro/oscuro, navegación,
-   test de perfil (ventana emergente), FAQ y formulario.
+   test de riesgo (ventana emergente), FAQ y formulario.
    Se carga con defer, después de Chart.js.
    ========================================================= */
 (function () {
@@ -175,7 +175,10 @@ document.addEventListener('keydown', e => {
   }
 });
 
-/* ---------- 9. TEST DE PERFIL (ventana emergente) ---------- */
+/* ---------- 9. TEST DE TOLERANCIA AL RIESGO (ventana emergente) ----------
+   V42: es educativo. Explica la tolerancia al riesgo de quien lo hace y muestra las seis estrategias ordenadas por riesgo,
+   SIN filtrar ni decir cuáles «encajan». No debe convertirse en una selección de estrategias para cada persona
+   (eso se parecería a una recomendación personalizada, que es asesoramiento y requiere autorización de la CNMV). */
 const QUIZ = [
   {a:'A · Tu situación', q:'¿Cuándo prevés necesitar este dinero?', o:['En menos de 2 años','Entre 2 y 5 años','Entre 5 y 10 años','En más de 10 años'], p:[1,2,3,4]},
   {q:'¿Qué parte de tus ahorros totales representa el dinero que vas a invertir?', o:['Más del 75%','Entre el 50% y el 75%','Entre el 25% y el 50%','Menos del 25%'], p:[1,2,3,4]},
@@ -210,7 +213,7 @@ function renderQuiz() {
   $('#qNext').addEventListener('click', () => { qi++; renderQuiz(); const f = $('.q-opt', quizEl) || $('h3', quizEl); if (f) f.focus(); });
 }
 
-/* ---- Resultado: perfil + explicación en lenguaje natural + estrategias que encajan (sin porcentajes) ---- */
+/* ---- Resultado: perfil de riesgo + explicación + las seis estrategias ordenadas por riesgo (sin selección) ---- */
 const PROFILES = ['Conservador', 'Moderado', 'Agresivo', 'Muy agresivo', 'Especulativo'];
 const PROFILE_TXT = [
   'priorizas proteger tu dinero frente a hacerlo crecer. Aceptas rentabilidades más modestas a cambio de ver pocas caídas.',
@@ -252,18 +255,7 @@ function evaluate() {
   if (tol / 4 - cap / 3 > 1) warn.push('Tu disposición a asumir riesgo es mayor que lo que tu situación actual permite. Conviene que lo tengas presente antes de invertir.');
   if (cap / 3 - tol / 4 > 1) warn.push('Tu situación te permitiría asumir más riesgo del que te resulta cómodo. Prevalece lo que te resulta cómodo: invertir de forma que puedas dormir tranquilo es lo que te permitirá mantener el plan.');
   if (p[6] <= 2 && a[8] === 'd') warn.push('Has dicho que aceptarías perder un 30% o más, pero que ante una caída del 20% venderías. Piensa cuál de las dos reacciones sería la real: es lo que más importa cuando llegan las caídas.');
-  // Estrategias: encajan las de nivel igual o inferior al tuyo (las inferiores con la observación de que rentarán menos de lo que buscas)
-  const ok = [], personal = [], higher = [];
-  Object.keys(LV).forEach(id => {
-    if (LV[id] > final) { higher.push(id); return; }
-    if (id === 'HORIZONTE' && (a[0] === 'a' || a[0] === 'b')) { personal.push([id, 'es un plan de pensiones y vas a necesitar el dinero en menos de 5 años']); return; }
-    if (id === 'GEDA' && a[8] < 'c') { personal.push([id, 'sus caídas históricas se acercan al 20% y has dicho que aceptarías menos']); return; }
-    if (id === 'GEN-Z' && a[8] < 'c') { personal.push([id, 'sus caídas históricas superan el 40% y has dicho que aceptarías menos']); return; }
-    if (id === 'CRYPTO' && a[8] !== 'd') { personal.push([id, 'sus caídas históricas llegan al 73% y has dicho que aceptarías menos']); return; }
-    ok.push(id);
-  });
-  ok.sort((x, y) => LV[y] - LV[x]);
-  return { cap, con, tol, tot, base, final, reasons, warn, ok, personal, higher, a };
+  return { cap, con, tol, tot, base, final, reasons, warn, a };
 }
 function renderResult() {
   const r = evaluate();
@@ -275,38 +267,33 @@ function renderResult() {
   let porque = `Has sumado <strong>${r.tot} puntos de 40</strong>. Esa puntuación corresponde a un perfil <strong>${PROFILES[r.base]}</strong>: ${PROFILE_TXT[r.base]}`;
   porque += ` Por áreas, tu capacidad para asumir riesgo es ${capT}; tus conocimientos son ${conT}; y ${tolT}.`;
   let final = '';
-  if (r.final < r.base) final = `Aun así, tu perfil final es <strong>${PROFILES[r.final]}</strong> porque ${r.reasons.join(', y porque ')}. No es un juicio sobre ti: es una regla de prudencia, ya que el riesgo que conviene asumir depende no solo de cuánto riesgo te sientes capaz de aceptar, sino también de lo que tu situación te permite. Si cambian tus circunstancias, puedes repetir el test.`;
-  else final = `Tu perfil final coincide con esa puntuación: <strong>${PROFILES[r.final]}</strong>.`;
-  const card = id => { const s = T.byId(id); const lower = LV[id] < r.final;
-    return `<li class="fit-card" style="--c:${s.color}"><div><strong><i style="background:${s.color}"></i>${T.label(id)}</strong> <span class="fit-tag">${s.profile}</span></div><p>${STRAT_WHY[id]}</p>${lower ? `<p class="fit-note">Encaja, pero su rentabilidad potencial es inferior a la que buscas con tu perfil.</p>` : ''}<p class="fit-dd">Mayor caída histórica: <b class="mono neg">${T.pct(s.dd)}</b> · <a href="${s.url}">Ver ficha</a></p></li>`; };
-  const cmpUrl = `${BASE}comparador/index.html?s=${r.ok.map(encodeURIComponent).join(',')}`;
-  let excl = r.personal.map(([id, m]) => `<li><strong>${T.label(id)}</strong>: ${m}.</li>`).join('');
-  if (r.higher.length) {
-    const worst = Math.max(...r.higher.map(id => Math.abs(T.byId(id).dd)));
-    excl += `<li><strong>${r.higher.join(', ')}</strong>: ${r.higher.length > 1 ? 'tienen un perfil de riesgo más alto' : 'tiene un perfil de riesgo más alto'} que el tuyo (caídas históricas de hasta el ${String(worst).replace('.', ',')}%).</li>`;
-  }
+  if (r.final < r.base) final = `Aun así, el resultado final es <strong>${PROFILES[r.final]}</strong> porque ${r.reasons.join(', y porque ')}. No es un juicio sobre ti: muchos test de riesgo aplican esta regla de prudencia, porque la capacidad de asumir pérdidas depende no solo de cuánto riesgo te resulta cómodo, sino también de tu situación. Si cambian tus circunstancias, puedes repetir el test.`;
+  else final = `El resultado final coincide con esa puntuación: <strong>${PROFILES[r.final]}</strong>.`;
+  const order = Object.keys(LV).sort((x, y) => LV[x] - LV[y] || Math.abs(T.byId(x).dd) - Math.abs(T.byId(y).dd));
+  const card = id => { const s = T.byId(id);
+    return `<li class="fit-card" style="--c:${s.color}"><div><strong><i style="background:${s.color}"></i>${T.label(id)}</strong> <span class="fit-tag">${s.profile}</span></div><p>${STRAT_WHY[id]}</p><p class="fit-dd">Mayor caída histórica: <b class="mono neg">${T.pct(s.dd)}</b> · <a href="${s.url}">Ver ficha</a></p></li>`; };
   quizEl.innerHTML = `<div class="q-result long">
     <div class="q-progress" aria-hidden="true"><div style="width:100%"></div></div>
-    <span class="eyebrow">Tu resultado</span>
-    <h3 style="font-size:var(--fs-2xl);margin:.4rem 0 .2rem" id="qRes">Tu perfil: ${PROFILES[r.final]}</h3>
+    <span class="eyebrow">Tu tolerancia al riesgo</span>
+    <h3 style="font-size:var(--fs-2xl);margin:.4rem 0 .2rem" id="qRes">Resultado: ${PROFILES[r.final]}</h3>
     <div class="q-areas">
       <div><span>Capacidad</span><b>${lvl(r.cap, 6, 9)}</b></div>
       <div><span>Conocimientos</span><b>${lvl(r.con, 6, 9)}</b></div>
       <div><span>Tolerancia</span><b>${lvl(r.tol, 8, 12)}</b></div>
     </div>
-    <h4>Por qué sale este perfil</h4>
+    <h4>Por qué sale este resultado</h4>
     <p>${porque}</p><p>${final}</p>
     ${r.warn.length ? `<div class="q-warn"><strong>A tener en cuenta</strong>${r.warn.map(w => `<p>${w}</p>`).join('')}</div>` : ''}
-    <h4>Estrategias que encajan con tu perfil</h4>
-    <ul class="fit-list">${r.ok.map(card).join('')}</ul>
-    <p class="q-hint">Puedes quedarte con una o combinar varias: cuántas y en qué medida es una decisión tuya. <a href="${BASE}combinar-estrategias/index.html">Cómo combinar las estrategias</a> · <a href="${BASE}ejemplo-practico/index.html">Ver un ejemplo práctico</a>.</p>
-    ${excl ? `<h4>Y las que, por ahora, no encajan</h4><ul class="fit-no">${excl}</ul>` : ''}
+    <h4>Cómo se mide el riesgo de las seis estrategias</h4>
+    <p>Para entender qué significa en la práctica cada nivel de riesgo, aquí tienes las seis estrategias que comparto, de menos a más riesgo, con la mayor caída que han tenido. <strong>No es una selección para ti</strong>: es la misma lista para todo el mundo, para que veas cómo se traduce el riesgo en caídas reales.</p>
+    <ul class="fit-list">${order.map(card).join('')}</ul>
+    <p class="q-hint">Qué hacer con tu dinero lo decides tú. Si tienes dudas sobre tu caso, lo adecuado es consultar a un asesor financiero autorizado. Para entender mejor el riesgo: <a href="${BASE}aprende/drawdowns-en-inversion-sin-saltarte-el-sistema/index.html">qué es una caída máxima</a> · <a href="${BASE}ejemplo-practico/index.html">ejemplo práctico</a>.</p>
     <div class="cta-row" style="margin-top:1.4rem">
-      <a class="btn btn-primary" href="${cmpUrl}">Comparar mis estrategias</a>
+      <a class="btn btn-primary" href="${BASE}comparador/index.html">Ver las seis frente a frente</a>
       <button type="button" class="btn btn-ghost" id="qRetry"><svg class="icon"><use href="#i-refresh"/></svg>Repetir test</button>
     </div>
     <p style="margin-top:1rem;font-size:var(--fs-sm)"><a class="more" href="${$('#suscripcion') ? '#suscripcion' : BASE + 'index.html#suscripcion'}" data-close>Quiero el informe gratis <svg class="icon"><use href="#i-arrow"/></svg></a></p>
-    <p class="fineprint">Resultado orientativo y educativo, calculado en tu navegador (tus respuestas no se envían a ningún sitio). No es un test de idoneidad regulado (MiFID) ni asesoramiento financiero personalizado. Las rentabilidades pasadas no garantizan rentabilidades futuras.</p>
+    <p class="fineprint">Test educativo sobre tolerancia al riesgo, calculado en tu navegador (tus respuestas no se envían a ningún sitio). No evalúa si una estrategia o un producto es adecuado para ti: no es un test de idoneidad ni asesoramiento financiero. Las rentabilidades pasadas no garantizan rentabilidades futuras.</p>
   </div>`;
   $('#qRetry').addEventListener('click', () => { answers.fill(null); qi = 0; renderQuiz(); $('.q-opt', quizEl).focus(); });
   const h = $('h3', quizEl); h.setAttribute('tabindex', '-1'); h.focus();
@@ -374,6 +361,33 @@ document.addEventListener('click', e => {
   if (!ev) return;
   try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: ev, title: a.textContent.trim().slice(0, 60), event: true }); } catch (err) {}
 });
+
+/* ---------- 12c. CUENTA ATRÁS HASTA EL PRÓXIMO INFORME ----------
+   El informe sale el día 1 de cada mes; se toma las 9:00 de Madrid como referencia. Solo días y horas (sin segundos:
+   no queremos meter prisa a nadie). [data-countdown] = frase completa; [data-countdown-short] = texto del botón fijo. */
+(function () {
+  const els = $$('[data-countdown]'), shorts = $$('[data-countdown-short]');
+  if (!els.length && !shorts.length) return;
+  const MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const parts = d => { const o = {}; new Intl.DateTimeFormat('en-GB', {timeZone: 'Europe/Madrid', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'})
+    .formatToParts(d).forEach(p => { if (p.type !== 'literal') o[p.type] = +p.value; }); return o; };
+  const madridUTC = (y, m, d, h) => {          // instante UTC de una hora de Madrid (con su horario de verano o invierno)
+    let t = Date.UTC(y, m - 1, d, h);
+    for (let i = 0; i < 2; i++) { const p = parts(new Date(t)); t -= (Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute) - Date.UTC(y, m - 1, d, h)); }
+    return t;
+  };
+  function tick() {
+    const now = Date.now(), p = parts(new Date(now));
+    let y = p.year, m = p.month;
+    let target = madridUTC(y, m, 1, 9);
+    if (target <= now) { m++; if (m > 12) { m = 1; y++; } target = madridUTC(y, m, 1, 9); }
+    const h = Math.max(0, Math.floor((target - now) / 3600000)), d = Math.floor(h / 24), hh = h % 24;
+    const falta = d > 0 ? `${d} ${d === 1 ? 'día' : 'días'}${hh ? ` y ${hh} ${hh === 1 ? 'hora' : 'horas'}` : ''}` : `${hh} ${hh === 1 ? 'hora' : 'horas'}`;
+    els.forEach(e => { e.hidden = false; e.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>El próximo informe sale el <strong>1 de ${MES[m - 1]}</strong> · faltan ${falta}</span>`; });
+    shorts.forEach(e => { e.textContent = `Próximo informe: 1 de ${MES[m - 1]}`; });
+  }
+  tick(); setInterval(tick, 60000);
+})();
 
 /* ---------- 13. INICIO ---------- */
 document.addEventListener('DOMContentLoaded', () => {

@@ -123,14 +123,14 @@ El oro lo tengo en un ETC/ETF, no en un fondo, así que no puedo traspasarlo. Cu
 
 Cada camino tiene su coste: impuestos en un caso y más dinero en el otro. Elegir uno u otro depende de tu situación fiscal y de si vas a aportar. Si dudas, consulta tu caso.
 
-## Paso a paso, en cada revisión
+## Lo que hago en cada revisión
 
-1. **En enero y en julio, apunta el valor de cada posición** y calcula su peso sobre el total.
-2. **Compara cada peso con su margen** (objetivo ± 15 % de ese objetivo).
-3. **Si todos están dentro, no hagas nada.** Es lo más habitual.
-4. **Si alguno se sale, calcula los importes objetivo**: el total de la cartera multiplicado por cada peso.
-5. **Mueve el dinero**: con aportaciones nuevas, con traspasos entre fondos o, si hace falta, vendiendo.
-6. **Anota lo que has hecho**, igual que con cualquier otra operación del [informe del mes](/aprende/como-aplico-el-informe-del-mes/).
+1. **En enero y en julio, apunto el valor de cada posición** y calculo su peso sobre el total.
+2. **Comparo cada peso con su margen** (objetivo ± 15 % de ese objetivo).
+3. **Si todos están dentro, no hago nada.** Es lo más habitual.
+4. **Si alguno se sale, calculo los importes objetivo**: el total de la cartera multiplicado por cada peso.
+5. **Muevo el dinero**: con aportaciones nuevas, con traspasos entre fondos o, si hace falta, vendiendo.
+6. **Anoto lo que he hecho**, igual que con cualquier otra operación del [informe del mes](/aprende/como-aplico-el-informe-del-mes/).
 
 Cuando toca rebalancear, te aviso en el informe, como hice con IMPULSO a mitad de 2025.
 

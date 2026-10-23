@@ -22,7 +22,7 @@ El informe te dice qué cambia, no cómo montar la estrategia desde cero. Para a
 - **Una cuenta en un bróker** que tenga los productos de esa estrategia. Te cuento cuáles uso yo en [qué brókers utilizo](/aprende/que-brokers-utilizo/).
 - **Un rato el primer día hábil del mes.** Si no hay cambios en tus estrategias, son cinco minutos.
 
-## Paso 1: ve directo a tus estrategias
+## Paso 1: voy directo a mis estrategias
 
 El informe sigue siempre el mismo orden:
 
@@ -41,7 +41,7 @@ En el informe de octubre, el resumen final decía:
 
 ROCA, IMPULSO y HORIZONTE no tenían cambios.
 
-## Paso 2: si no hay cambios, no hagas nada
+## Paso 2: si no hay cambios, no hago nada
 
 Parece obvio, pero es el paso más importante. Si tu estrategia dice «Sin cambios», no tienes que tocar nada. No hace falta «ajustar un poco» ni vender lo que ha bajado.
 
@@ -51,7 +51,7 @@ Cada estrategia tiene su ritmo:
 - **[HORIZONTE](/plan-pensiones-moderado-horizonte/)** trabaja con planes de pensiones. Lo normal es que el informe diga «Sin cambios ni actuaciones necesarias», como en octubre.
 - **[GEDA](/inversion-tactica-geda/), [GEN-Z](/inversion-tematica-gen-z/) y [CRYPTO](/inversion-criptomonedas-crypto/)** se revisan cada mes, así que en ellas es donde suelen aparecer las rotaciones.
 
-## Paso 3: si hay una rotación, vende la que sale y compra la que entra
+## Paso 3: si hay una rotación, vendo la que sale y compro la que entra
 
 Una rotación siempre tiene la misma forma: **sale un activo y entra otro.** Lo que hago yo es:
 
@@ -66,7 +66,7 @@ En CRYPTO funciona igual, pero dentro de las altcoins: DASH salió y NEAR entró
 
 Un detalle práctico: si la acción que sale y la que entra cotizan en la misma divisa, conviene operar en un bróker que te deje mantener esa divisa. Así no pagas el cambio de moneda dos veces. Lo explico en el artículo de [brókers](/aprende/que-brokers-utilizo/).
 
-## Paso 4: hazlo el primer día hábil del mes
+## Paso 4: lo hago el primer día hábil del mes
 
 Yo ejecuto los cambios **el primer día hábil del mes**. Si el día 1 cae en fin de semana o festivo, lo hago el siguiente día de mercado.
 
@@ -77,7 +77,7 @@ Ten en cuenta que no todo se ejecuta igual de rápido:
 - **Acciones, ETF y criptomonedas:** la orden se ejecuta en el momento, o cuando el precio llega a tu límite.
 - **Fondos de inversión y planes de pensiones:** no compras a un precio que veas en pantalla. Se aplica el valor liquidativo que fije la gestora, y un traspaso puede tardar varios días en completarse.
 
-## Paso 5: elige el tipo de orden según el activo
+## Paso 5: elijo el tipo de orden según el activo
 
 Aquí no tengo una regla única. Depende de lo líquido que sea el activo:
 
@@ -86,22 +86,22 @@ Aquí no tengo una regla única. Depende de lo líquido que sea el activo:
 
 Antes de lanzar la orden, mira la horquilla, es decir, la diferencia entre el mejor precio de compra y el de venta. Si es amplia, una orden a mercado te puede salir cara.
 
-## Paso 6: apunta lo que has hecho
+## Paso 6: apunto lo que he hecho
 
 Cuando termino, anoto cada operación: fecha, activo, importe, precio y comisión. Me lleva dos minutos y me ahorra mucho tiempo en la declaración de la renta.
 
 En las estrategias que rotan cada mes, esto importa. Un ejemplo: si vendes un valor cotizado con pérdidas y compras ese mismo valor en los dos meses anteriores o posteriores a la venta, Hacienda no te deja restar esa pérdida todavía. Lo explicaré con calma en un artículo aparte, pero ya ves por qué conviene tenerlo todo apuntado.
 
-## Si empiezas de cero: poco a poco
+## Si se empieza de cero: poco a poco
 
 Si acabas de suscribirte y todavía no tienes la estrategia montada, el informe te dice qué posiciones están vigentes ese mes. La tentación es comprarlas todas de golpe. En las estrategias más agresivas (GEDA, GEN-Z y CRYPTO) yo **entraría poco a poco**, en varios meses, como explico en [cómo incorporarte a una estrategia](/aprende/dollar-cost-averaging/).
 
 En la práctica:
 
-1. **Decide el importe total** y en cuántas partes lo vas a dividir.
-2. **El primer mes, compra las posiciones vigentes con la primera parte**, respetando el reparto de la estrategia (lo tienes en la tabla de abajo).
-3. **Los meses siguientes, añade otra parte** a las posiciones que estén vigentes en ese momento.
-4. **Si hay una rotación mientras tanto, aplícala a lo que ya tengas**, igual que en el paso 3.
+1. **Se decide el importe total** y en cuántas partes dividirlo.
+2. **El primer mes, se compran las posiciones vigentes con la primera parte**, respetando el reparto de la estrategia (está en la tabla de abajo).
+3. **Los meses siguientes, se añade otra parte** a las posiciones que estén vigentes en ese momento.
+4. **Si hay una rotación mientras tanto, se aplica a lo que ya se tiene**, igual que en el paso 3.
 
 Así se reparte el dinero en las tres estrategias que rotan:
 

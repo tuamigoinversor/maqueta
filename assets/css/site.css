@@ -1085,3 +1085,35 @@ main .legal-sec h2{margin-bottom:.8rem}
 .hero .hero-micro{margin:.6rem 0 0;font-size:var(--fs-xs,.8rem);color:var(--muted)}
 .cta-intro .sub-sample{margin-top:.75rem;font-size:var(--fs-sm);color:var(--muted)}
 .cta-intro .sub-sample a{font-weight:600}
+
+/* V41 · últimos artículos en la portada: en móvil, formato compacto (miniatura + título) para no alargar la página */
+@media (max-width:600px){
+  .blog-home{gap:.6rem!important}
+  .blog-home .post{display:grid;grid-template-columns:92px minmax(0,1fr);align-items:center;gap:.75rem;padding:.6rem}
+  .blog-home .post-media{aspect-ratio:3/2;border-radius:10px;overflow:hidden;margin:0}
+  .blog-home .post-media img{width:100%;height:100%;object-fit:cover}
+  .blog-home .post-body{padding:0!important}
+  .blog-home .post-body p,.blog-home .post-body .more{display:none}
+  .blog-home .post-body h3{font-size:1rem;line-height:1.25;margin:.15rem 0 0}
+  .blog-home .post-body small{font-size:.72rem}
+}
+
+/* V43 · cuenta atrás hasta el próximo informe */
+.countdown{display:flex;align-items:center;gap:.5rem;margin:.6rem 0 .2rem;font-size:var(--fs-sm);color:var(--muted)}
+.countdown .icon{width:1.05em;height:1.05em;color:var(--accent);flex:none}
+.countdown strong{color:var(--ink,inherit)}
+.page-hero .countdown{margin-top:.9rem}
+
+/* V43 · mapa de calor del año en la portada */
+.hm-wrap{margin-top:1.4rem}
+.hm-wrap h3{font-size:var(--fs-lg);margin:0 0 .6rem}
+.hm-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.hm-home{border-collapse:separate;border-spacing:3px;width:100%;min-width:560px;font-size:.78rem}
+.hm-home th{font-weight:600;color:var(--muted);text-align:center;padding:.2rem;white-space:nowrap}
+.hm-home th[scope=row]{text-align:left;color:inherit;position:sticky;left:0;background:var(--surface);z-index:1;padding-right:.5rem}
+.hm-home td{text-align:center;padding:.45rem .2rem;border-radius:6px;font-family:var(--font-mono);font-size:.74rem;white-space:nowrap}
+.hm-home td.ytd{font-weight:700;background:transparent!important;border-left:2px solid var(--line)}
+.hm-home td.ytd.pos{color:var(--pos)}.hm-home td.ytd.neg{color:var(--neg)}
+@media (max-width:600px){.hm-home{font-size:.7rem}.hm-home td{padding:.38rem .15rem;font-size:.66rem}}
+.hm-home .sw{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;margin-right:.45rem;vertical-align:middle}
+.hm-wrap+.rp-note{margin-top:1rem}

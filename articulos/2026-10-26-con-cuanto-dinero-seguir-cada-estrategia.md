@@ -103,12 +103,12 @@ El bróker más barato en comisiones no siempre es el más barato en total. Por 
 - **ROCA e IMPULSO:** casi no hay operaciones, solo algún rebalanceo al año, como explico en [cómo rebalanceo ROCA e IMPULSO](/aprende/rebalanceo-roca-impulso/). Vale cualquier importe razonable. Lo que sí puede limitarte es que **algunos fondos piden una inversión mínima**: compruébalo en tu bróker.
 - **HORIZONTE:** se sigue con planes de pensiones. El límite lo pone la ley: con carácter general, en 2026 puedes aportar hasta **1.500 € al año** a planes individuales. Y es dinero que, salvo excepciones, no podrás recuperar hasta la jubilación.
 
-## Si tienes poco dinero
+## Lo que haría yo con poco dinero
 
-- **Empieza por una estrategia con pocas operaciones**, como ROCA o IMPULSO, y deja las tácticas para cuando tengas más.
-- **Elige un bróker barato para lo que vayas a operar.** En las estrategias que rotan, el bróker puede importar más que la estrategia.
-- **No repartas poco dinero entre muchas estrategias.** Seguir tres estrategias con 1.000 € cada una multiplica las operaciones. Mejor una bien que tres a medias.
-- **Ve aportando y amplía después.** Puedes empezar con una estrategia sencilla e incorporar otra cuando el importe lo justifique.
+- **Empezaría por una estrategia con pocas operaciones**, como ROCA o IMPULSO, y dejaría las tácticas para cuando tuviera más.
+- **Elegiría un bróker barato para lo que fuera a operar.** En las estrategias que rotan, el bróker puede importar más que la estrategia.
+- **No repartiría poco dinero entre muchas estrategias.** Seguir tres estrategias con 1.000 € cada una multiplica las operaciones. Mejor una bien que tres a medias.
+- **Iría aportando y ampliaría después**, incorporando otra estrategia cuando el importe lo justificara.
 
 ## En resumen
 
