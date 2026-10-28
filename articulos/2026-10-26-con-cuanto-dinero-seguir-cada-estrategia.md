@@ -36,7 +36,7 @@ Si solo te quedas con una idea: **en GEDA y GEN-Z, el bróker pesa tanto como el
 Antes de pensar en comisiones, hay una pregunta más importante: **¿qué dinero puedes invertir sin que te cambie la vida si cae?**
 
 - **Tu colchón para imprevistos no se invierte.** En el [ejemplo práctico](/ejemplo-practico/) verás cómo Marta refuerza su reserva antes de decidir cuánto invierte.
-- **Piensa en la caída en euros.** Con 10.000 €, la peor caída histórica te habría dejado en 9.080 € en ROCA y en 2.700 € en CRYPTO. Si esa cifra te quitaría el sueño, el importe es demasiado alto para esa estrategia. Y la próxima caída puede ser mayor. Lo explico en el artículo sobre [drawdowns](/aprende/drawdowns-en-inversion-sin-saltarte-el-sistema/).
+- **Piensa en la caída en euros.** Con 10.000 €, la peor caída con dinero real te habría dejado en 9.080 € en ROCA y en 4.990 € en CRYPTO. Si esa cifra te quitaría el sueño, el importe es demasiado alto para esa estrategia. Y la próxima caída puede ser mayor. Lo explico en el artículo sobre [drawdowns](/aprende/drawdowns-en-inversion-sin-saltarte-el-sistema/).
 
 Con ese importe claro, toca la segunda pregunta: ¿es suficiente para que las comisiones no se lo coman?
 
@@ -127,11 +127,11 @@ He contado los cambios de posición en el historial de cada estrategia. Cada cam
 
 | Estrategia | Posiciones | Cambios al año (media) | Operaciones al año (aprox.) |
 |---|---|---|---|
-| GEDA | 7 | unos 15 | unas 30 |
+| GEDA | 7 | unos 14 | unas 30 |
 | GEN-Z | 4 | unos 7–8 | unas 15 |
 | CRYPTO | 5 (solo rotan las 3 altcoins) | unos 10 | unas 20 |
 
-*Medias de los años completos del historial, que incluye años simulados. Cada año es distinto: GEDA tuvo 22 cambios en 2024 y 8 en 2025. A esto hay que sumar las compras iniciales: una por posición, o varias si entras poco a poco.*
+*Medias de los años completos con dinero real (GEDA, 2021–2025; GEN-Z, 2024–2025; CRYPTO, 2023–2025). Cada año es distinto: GEDA tuvo 19 cambios en 2024 y 7 en 2025. A esto hay que sumar las compras iniciales: una por posición, o varias si entras poco a poco.*
 
 ### La fórmula
 
@@ -169,4 +169,4 @@ Cada altcoin pesa algo más del 13 % de la cartera y hay unos 10 cambios al añ
 
 </details>
 
-*Este artículo es informativo y no constituye asesoramiento financiero ni una recomendación personalizada. Los cálculos son aproximados y usan el historial de las estrategias, que incluye años simulados. Las tarifas citadas son las publicadas por cada entidad en 2026 y pueden cambiar: compruébalas antes de contratar. Las rentabilidades publicadas no incluyen comisiones ni impuestos.*
+*Este artículo es informativo y no constituye asesoramiento financiero ni una recomendación personalizada. Los cálculos son aproximados y usan el historial con dinero real de las estrategias. Las tarifas citadas son las publicadas por cada entidad en 2026 y pueden cambiar: compruébalas antes de contratar. Las rentabilidades publicadas no incluyen comisiones ni impuestos.*

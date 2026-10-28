@@ -1,5 +1,25 @@
-TU AMIGO INVERSOR · WEB V43
+TU AMIGO INVERSOR · WEB V44
 ===========================
+
+CAMBIOS V44 (solo resultados con dinero real)
+  - Toda la web muestra solo rentabilidades, posiciones y caídas con dinero real: ROCA desde 2017, IMPULSO 2018,
+    HORIZONTE 2020, GEDA 2021, CRYPTO 2023 y GEN-Z 2024. Los backtest previos solo aparecen como contexto, en la tarjeta
+    «Antes del dinero real» de cada ficha (y, en CRYPTO, también en los avisos de riesgo: caídas de más del 70 % en 2018 y 2022).
+  - GEDA: nueva serie de GEDA_historico_web_definitivo.xlsx (método actual 2021–2025 + lo publicado en 2026: SNDK desde
+    enero, LITE después, sin IFX), presentada como dinero real desde enero de 2021. +45,9 % anual, caída máxima −16,2 %.
+    Posiciones, rotación, tops y caídas recalculados con esa serie.
+  - GEN-Z y CRYPTO (menos de 5 años con dinero real): sin rentabilidad anualizada. Se muestran el acumulado, los años uno a
+    uno y un aviso de historial corto (fichas, tarjetas de la portada, comparador). En tai.js: campos realCum y short.
+  - Fichas: constantes GEDA/YX/POS recortadas al periodo real; métricas, componentes, bloques, señales de HORIZONTE,
+    estadísticas de posiciones, tablas año a año, anatomía de caídas, FAQ y ejemplos en euros recalculados.
+  - Portada, comparador, metodología, guía, ejemplo práctico, recomendaciones y artículos (drawdowns, combinar,
+    rebalanceo, con cuánto dinero): cifras con dinero real. El artículo de rebalanceo se recalculó desde 2017/2018.
+  - Combinar: el simulador de interés compuesto no proyecta mezclas con GEN-Z o CRYPTO (no tienen media anual fiable).
+  - GEDA 12 meses en portada y comparador: +100,86 % (serie nueva). El informe de octubre decía +101,93 % (Excel de seguimiento).
+  - Generador de informes: el bloque «Altcoins» de CRYPTO pasa a ser la media de las tres altcoins. La columna T del Excel
+    (CRYPTO-detalle) no cuadra con el total de la estrategia en 104 de 105 meses; la media sí cuadra.
+  - tools/check_site.py comprueba el acumulado (no la media) en GEN-Z y CRYPTO.
+  - OJO: no ejecutes tools/prelaunch.py hasta el lanzamiento (quita el noindex y abre robots.txt).
 
 CAMBIOS V43 (generador de informes y mejoras de la web)
   - NUEVO tools/informe/: generador del informe mensual en HTML y PDF con el diseño nuevo. Lee el Excel

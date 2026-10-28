@@ -28,7 +28,14 @@ slugs = {'ROCA': 'cartera-permanente-conservadora-roca', 'IMPULSO': 'cartera-inv
 tai = rd('assets/js/tai.js')
 for k, sl in slugs.items():
     a = float(re.search(r"id:'%s'.*?avg:([\d.]+)" % re.escape(k), tai, re.S).group(1))
-    t = re.sub(r'<[^>]+>', '|', rd(sl + '/index.html')); m = re.search(r'Rentabilidad anualizada(?! desde)[^0-9+\-−]{0,60}\+?([\d,]+)\s?%', t)
+    t = re.sub(r'<[^>]+>', '|', rd(sl + '/index.html'))
+    if re.search(r"id:'%s'.*?short:true" % re.escape(k), tai.split("id:'%s'" % k)[1].split('url:')[0] and "id:'%s'" % k + tai.split("id:'%s'" % k)[1].split('url:')[0], re.S):
+        rc = float(re.search(r"realCum:([\d.]+)", tai.split("id:'%s'" % k)[1]).group(1))
+        m3 = re.search(r'Acumulado con dinero real desde \d{4}[^0-9+\-−]{0,80}\+?([\d.,]+)\s?%', t)
+        if not m3: errs.append('Ficha sin acumulado real: ' + k)
+        elif abs(float(m3.group(1).replace('.', '').replace(',', '.')) - rc) > 0.05: errs.append('Acumulado real distinto en %s: tai.js %s vs ficha %s' % (k, rc, m3.group(1)))
+        continue
+    m = re.search(r'Rentabilidad anualizada(?! desde)[^0-9+\-−]{0,60}\+?([\d,]+)\s?%', t)
     if m and abs(float(m.group(1).replace(',', '.')) - a) > 0.05: errs.append('Rent. media distinta en %s: tai.js %s vs ficha %s' % (k, a, m.group(1)))
     ra = float(re.search(r"id:'%s'.*?realAvg:([\d.]+)" % re.escape(k), tai, re.S).group(1))
     m2 = re.search(r'Rentabilidad anualizada desde \d{4}[^0-9+\-−]{0,80}\+?([\d,]+)\s?%', t)

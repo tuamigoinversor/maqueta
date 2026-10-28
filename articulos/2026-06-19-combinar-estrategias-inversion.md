@@ -50,7 +50,7 @@ Cada estrategia se diseñó con un objetivo y un perfil de riesgo distinto. ROCA
 <tr class="odd">
 <td>GEDA</td>
 <td>Táctica momentum agresiva</td>
-<td>-19,6%</td>
+<td>-16,2%</td>
 <td>Crecimiento táctico</td>
 </tr>
 <tr class="even">
@@ -62,14 +62,14 @@ Cada estrategia se diseñó con un objetivo y un perfil de riesgo distinto. ROCA
 <tr class="odd">
 <td>CRYPTO</td>
 <td>Especulativa cripto</td>
-<td>-73%</td>
+<td>-50,1%</td>
 <td>Satélite de muy alto riesgo</td>
 </tr>
 </tbody>
 </table>
 </figure>
 
-*Caídas máximas históricas a 30 de septiembre de 2026 (incluyen los años simulados). Las cifras actualizadas están en el [comparador](/comparador/).*
+*Caídas máximas con dinero real a 30 de septiembre de 2026, desde el año en que empecé con cada estrategia (GEN-Z y CRYPTO, con menos de cinco años de historial). En el backtest previo, CRYPTO llegó a caer más de un 70%. Las cifras actualizadas están en el [comparador](/comparador/).*
 
 ## La lógica de combinar: núcleo + satélites
 
@@ -83,7 +83,7 @@ Esto no es una recomendación personalizada — es la lógica que yo mismo sigo 
 
 - **Perfil conservador**: ROCA como núcleo principal, con una porción pequeña de IMPULSO o GEDA como complemento de crecimiento.
 - **Perfil moderado**: IMPULSO como base, combinado con GEDA como aporte táctico, manteniendo el núcleo permanente como la mayoría de la cartera.
-- **Perfil agresivo**: GEDA y GEN-Z como motor principal, con CRYPTO como satélite muy acotado — nunca como pieza central, por su drawdown de -73%.
+- **Perfil agresivo**: GEDA y GEN-Z como motor principal, con CRYPTO como satélite muy acotado — nunca como pieza central: con dinero real ha caído un -50,1%, y en el backtest previo, más de un 70%.
 - **HORIZONTE (plan de pensiones)**: funciona como vehículo aparte, normalmente complementario a cualquiera de los perfiles anteriores por su tratamiento fiscal específico, no exclusivo de ninguno.
 
 ## La regla de oro: que el drawdown combinado sea uno que puedas aguantar

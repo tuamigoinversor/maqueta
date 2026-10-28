@@ -57,7 +57,7 @@ BLOQUES = {
     'GEDA': [('Índices', [(3, 4)], None), ('Sectores', [(8, 9), (10, 11)], 12),
              ('Acciones EE. UU.', [(16, 17), (18, 19)], 20), ('Acciones Europa', [(24, 25), (26, 27)], 28)],
     'GEN-Z': [('Sectores disruptivos', [(3, 4), (8, 9), (13, 14), (18, 19)], 24)],
-    'CRYPTO': [('Bitcoin', [(3, 4)], None), ('Ether', [(8, 9)], None), ('Altcoins', [(13, 14), (15, 16), (17, 18)], 19)],
+    'CRYPTO': [('Bitcoin', [(3, 4)], None), ('Ether', [(8, 9)], None), ('Altcoins', [(13, 14), (15, 16), (17, 18)], None)]  # media de las 3 altcoins (la columna T del Excel no cuadra con el total),
 }
 TOTAL_TACT = {'GEDA': 33, 'GEN-Z': 24, 'CRYPTO': 24}
 
@@ -188,7 +188,7 @@ class Modelo:
                         if not isinstance(t, str) or not isinstance(v, (int, float)):
                             raise SystemExit('ERROR: columna inesperada en %s (%s). Revisa BLOQUES en el script.' % (INFO[e]['hoja'], k))
                         pos.append((t.strip(), v * 100))
-                    br = r[cb] * 100 if cb is not None and isinstance(r[cb], (int, float)) else (pos[0][1] if len(pos) == 1 else None)
+                    br = r[cb] * 100 if cb is not None and isinstance(r[cb], (int, float)) else (sum(v for _, v in pos) / len(pos) if pos else None)
                     meses[k] = dict(pos=pos, ret=br)
                 bloques.append(dict(nombre=nombre, meses=meses))
             out['bloques'] = bloques

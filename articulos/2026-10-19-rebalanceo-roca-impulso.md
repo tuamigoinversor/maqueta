@@ -2,7 +2,7 @@
 title: "Cómo rebalanceo ROCA e IMPULSO (y por qué no lo hago cada mes)"
 fecha: 2026-10-19
 categoria: "Operativa"
-resumen: "Cuándo reviso las carteras permanentes, por qué rebalanceo con un margen del 15 %, cómo lo hago sin pagar impuestos de más y qué habría pasado desde 2016 con y sin rebalanceo."
+resumen: "Cuándo reviso las carteras permanentes, por qué rebalanceo con un margen del 15 %, cómo lo hago sin pagar impuestos de más y qué habría pasado con y sin rebalanceo desde que invierto con dinero real."
 imagen: "assets/img/posts/rebalanceo-roca-impulso.webp"
 siguiente_texto: "Ver ROCA e IMPULSO frente a frente"
 siguiente_url: "/comparador/"
@@ -53,26 +53,26 @@ Podría devolver la cartera a sus pesos todos los meses, pero no compensa:
 
 Un matiz importante sobre las cifras de las fichas: las rentabilidades publicadas se calculan devolviendo la cartera a sus pesos cada mes. En la práctica rebalanceo mucho menos, así que lo que obtengas puede diferir un poco. En la tabla de abajo ves cuánto.
 
-## Qué habría pasado desde 2016
+## Qué habría pasado con dinero real
 
-He aplicado tres formas de mantener la cartera a todo el histórico, de enero de 2016 a septiembre de 2026:
+He aplicado tres formas de mantener la cartera al periodo con dinero real: de enero de 2017 (ROCA) y de enero de 2018 (IMPULSO) a septiembre de 2026:
 
 | Estrategia y forma de mantenerla | Rentabilidad anualizada | Peor caída | Rebalanceos |
 |---|---|---|---|
-| **IMPULSO** · pesos fijos cada mes (cifras publicadas) | +13,7 % | −16,5 % | Cada mes |
-| **IMPULSO** · mi regla (enero y julio, margen del 15 %) | +13,5 % | −16,2 % | 3 |
-| **IMPULSO** · sin rebalancear nunca | +13,2 % | −16,2 % | 0 |
-| **ROCA** · pesos fijos cada mes (cifras publicadas) | +7,5 % | −9,2 % | Cada mes |
-| **ROCA** · mi regla (enero y julio, margen del 15 %) | +7,5 % | −8,8 % | 10 |
-| **ROCA** · sin rebalancear nunca | +8,5 % | −9,9 % | 0 |
+| **IMPULSO** · pesos fijos cada mes (cifras publicadas) | +14,5 % | −16,5 % | Cada mes |
+| **IMPULSO** · mi regla (enero y julio, margen del 15 %) | +14,5 % | −15,4 % | 3 |
+| **IMPULSO** · sin rebalancear nunca | +14,0 % | −15,4 % | 0 |
+| **ROCA** · pesos fijos cada mes (cifras publicadas) | +7,1 % | −9,2 % | Cada mes |
+| **ROCA** · mi regla (enero y julio, margen del 15 %) | +7,1 % | −8,8 % | 8 |
+| **ROCA** · sin rebalancear nunca | +8,2 % | −9,4 % | 0 |
 
-*Incluye años simulados (2016 en ROCA y 2016–2017 en IMPULSO). En euros, sin comisiones ni impuestos. Rentabilidades pasadas no garantizan rentabilidades futuras.*
+*Solo el periodo con dinero real. En euros, sin comisiones ni impuestos. Rentabilidades pasadas no garantizan rentabilidades futuras.*
 
 Hay tres cosas que me parecen interesantes:
 
-1. **Con mi regla, el resultado es casi el mismo que el publicado**, con solo 3 rebalanceos en IMPULSO y 10 en ROCA en casi once años.
+1. **Con mi regla, el resultado es casi el mismo que el publicado**, con solo 3 rebalanceos en IMPULSO y 8 en ROCA en nueve o diez años.
 2. **En IMPULSO, no rebalancear nunca habría dado algo menos de rentabilidad**, sin reducir la peor caída.
-3. **En ROCA, no rebalancear habría dado más rentabilidad. Y aquí está la trampa.** A septiembre de 2026, esa cartera sin tocar tendría un 42 % en bolsa y solo un 35 % en renta fija, cuando debería tener un 25 % y un 60 %. Habría ganado más porque se habría vuelto otra cartera, mucho menos conservadora que la que elegiste. Que en este periodo haya salido bien no quiere decir que vaya a salir bien en la próxima crisis.
+3. **En ROCA, no rebalancear habría dado más rentabilidad. Y aquí está la trampa.** A septiembre de 2026, esa cartera sin tocar tendría un 41 % en bolsa y solo un 36 % en renta fija, cuando debería tener un 25 % y un 60 %. Habría ganado más porque se habría vuelto otra cartera, mucho menos conservadora que la que elegiste. Que en este periodo haya salido bien no quiere decir que vaya a salir bien en la próxima crisis.
 
 Por eso rebalanceo. **No lo hago para ganar más, sino para seguir teniendo el riesgo que elegí.**
 
@@ -82,19 +82,19 @@ Antes de fijar la regla probé varios márgenes con el mismo histórico, siempre
 
 | Margen | Rebalanceos IMPULSO | Desviación máx. de la bolsa en IMPULSO | Rebalanceos ROCA | Desviación máx. de la bolsa en ROCA |
 |---|---|---|---|---|
-| 10 % del peso | 9 | 6,9 puntos | 13 | 5,1 puntos |
-| **15 % del peso** | **3** | **10,2 puntos** | **10** | **5,1 puntos** |
+| 10 % del peso | 6 | 9,1 puntos | 11 | 5,1 puntos |
+| **15 % del peso** | **3** | **10,2 puntos** | **8** | **5,1 puntos** |
 | 20 % del peso | 3 | 10,2 puntos | 5 | 7,3 puntos |
-| Más de 5 puntos | 4 | 9,8 puntos | 2 | 7,8 puntos |
+| Más de 5 puntos | 4 | 9,8 puntos | 3 | 7,2 puntos |
 
 *La desviación es la mayor diferencia que llegó a haber entre el peso real de la bolsa y su peso objetivo. Mismo periodo y mismas condiciones que la tabla anterior.*
 
 Lo que saqué en claro:
 
-- **La rentabilidad casi no cambia entre unos márgenes y otros.** En todos los casos queda entre +13,4 % y +13,5 % en IMPULSO y entre +7,5 % y +7,8 % en ROCA. Con once años de datos, esas diferencias son ruido. Lo que sí cambia es cuántas operaciones haces y cuánto se aleja la cartera de su riesgo.
-- **Un margen en puntos no sirve igual para todos los activos.** En un activo que pesa un 10 %, 5 puntos son la mitad de su peso: puede pasar del 10 % al 15 % sin que salte la regla. Con ese criterio, la peor caída de ROCA habría sido la misma que sin rebalancear nunca (−9,9 %). Un porcentaje del peso trata igual a todos los activos.
-- **El 10 % obliga a rebalancear IMPULSO tres veces más** (9 veces frente a 3). Mantiene la bolsa algo más cerca de su peso, pero la peor caída casi no cambia (−16,0 % frente a −16,2 %), y cada rebalanceo de IMPULSO suele suponer vender oro, que tributa.
-- **El 15 % es el punto medio.** En IMPULSO rebalancea lo mismo que el 20 %. En ROCA mantiene el riesgo casi igual que rebalanceando en cada revisión, con más o menos un ajuste al año, y casi todos se hacen con traspasos entre fondos, que no tributan.
+- **La rentabilidad casi no cambia entre unos márgenes y otros.** En todos los casos queda entre +14,2 % y +14,5 % en IMPULSO y entre +7,1 % y +7,3 % en ROCA. Con nueve o diez años de datos, esas diferencias son ruido. Lo que sí cambia es cuántas operaciones haces y cuánto se aleja la cartera de su riesgo.
+- **Un margen en puntos no sirve igual para todos los activos.** En un activo que pesa un 10 %, 5 puntos son la mitad de su peso: puede pasar del 10 % al 15 % sin que salte la regla. Con ese criterio, la bolsa de ROCA llegó a alejarse 7,2 puntos de su peso, frente a 5,1 con el 15 %. Un porcentaje del peso trata igual a todos los activos.
+- **El 10 % obliga a rebalancear IMPULSO el doble** (6 veces frente a 3). Mantiene la bolsa algo más cerca de su peso (9,1 puntos frente a 10,2), pero la peor caída no mejora (−15,6 % frente a −15,4 %), y cada rebalanceo de IMPULSO suele suponer vender oro, que tributa.
+- **El 15 % es el punto medio.** En IMPULSO rebalancea lo mismo que el 20 %. En ROCA mantiene el riesgo casi igual que rebalanceando en cada revisión, con algo menos de un ajuste al año, y casi todos se hacen con traspasos entre fondos, que no tributan.
 
 También probé a revisar cada mes en vez de dos veces al año: solo añade operaciones, sin mejorar el resultado.
 
@@ -145,4 +145,4 @@ Si sigues ROCA o IMPULSO junto a otras estrategias, como te contaba en [cómo co
 - Rebalancear no busca ganar más: busca mantener el riesgo que elegiste.
 - Prefiero hacerlo con aportaciones y traspasos entre fondos, que no tributan. Con el oro en ETC/ETF hay que elegir entre vender (y tributar) o aportar más.
 
-*Este artículo describe mi operativa personal y tiene carácter informativo. No es asesoramiento financiero ni fiscal, ni una recomendación personalizada. Los cálculos usan el histórico de las estrategias, que incluye años simulados, en euros y sin comisiones ni impuestos. Las rentabilidades pasadas no garantizan rentabilidades futuras.*
+*Este artículo describe mi operativa personal y tiene carácter informativo. No es asesoramiento financiero ni fiscal, ni una recomendación personalizada. Los cálculos usan el histórico con dinero real de las estrategias, en euros y sin comisiones ni impuestos. Las rentabilidades pasadas no garantizan rentabilidades futuras.*
